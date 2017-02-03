@@ -1,14 +1,26 @@
 Domain requirement engineering : 
 
-Ce qui varie :
+Il fau rajouter des éléments variable, mais aussi définir plus en détails les élements (Leur donner des cardinalités).
+
+&---Ce qui varie : 
 - Le nombre de plateformes
-- Le nombre d'ennemies
-- Les types d'ennemies
+- La longueur des plateformes
+- Le nombre d'ennemis
+- Les types d'ennemis
 - Les saisons (été-automne-hiver-printemps)
+- La hauteur du sol (par case)
+- 
+
+/*  ---- Si power-up --- */
+- La hit-box du joueur
+- La vitesse du joueur
+- La santé du joueur
+- Le nombre de power-up? (par niveau) 
+-
 
 
-
-Ce qui ne varie pas :
+&---Ce qui ne varie pas :
 - La taille du niveaux
-- La taille du joueur ? (si power up?) -> Hitbox du joueur
+- La taille du joueur?
+- Le nombre de check-point par niveau
 - 
