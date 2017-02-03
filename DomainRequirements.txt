@@ -1,0 +1,14 @@
+Domain requirement engineering : 
+
+Ce qui varie :
+- Le nombre de plateformes
+- Le nombre d'ennemies
+- Les types d'ennemies
+- Les saisons (été-automne-hiver-printemps)
+
+
+
+Ce qui ne varie pas :
+- La taille du niveaux
+- La taille du joueur ? (si power up?) -> Hitbox du joueur
+- 
