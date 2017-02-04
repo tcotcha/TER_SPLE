@@ -1,6 +1,6 @@
 Domain requirement engineering : 
 
-Il fau rajouter des éléments variable, mais aussi définir plus en détails les élements (Leur donner des cardinalités).
+Il faut rajouter des éléments variable, mais aussi définir plus en détails les élements (Leur donner des cardinalités).
 
 &---Ce qui varie : 
 - Le nombre de plateformes
@@ -22,5 +22,5 @@ Il fau rajouter des éléments variable, mais aussi définir plus en détails le
 &---Ce qui ne varie pas :
 - La taille du niveaux
 - La taille du joueur?
-- Le nombre de check-point par niveau
+- Le nombre de check-point par niveau (un seul à peu près au millieu du niveau ?)
 - 
