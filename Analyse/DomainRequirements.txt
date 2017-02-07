@@ -1,6 +1,6 @@
 Domain requirement engineering : 
 
-Il faut rajouter des éléments variable, mais aussi définir plus en détails les élements (Leur donner des cardinalités).
+Il faut rajouter des éléments variables, mais aussi définir plus en détails les élements (Leur donner des cardinalités).
 
 &---Ce qui varie : 
 - Le nombre de plateformes
@@ -14,7 +14,7 @@ Il faut rajouter des éléments variable, mais aussi définir plus en détails l
 - Plateforme mobile verticalement ou horizontalement
 - Difficultés : moins de powerup, plus de trou, plus d'ennemis, taille des plateformes
 - Taille du niveau
-- 
+- Raccourci?
 
 /*  ---- Si power-up --- */
 - La hit-box du joueur
@@ -23,7 +23,7 @@ Il faut rajouter des éléments variable, mais aussi définir plus en détails l
 - Possibilité de lancer des projectiles
 - Powerup mobile?
 - Powerup malus?
-- 
+- Temps d'action?
 
 
 &---Ce qui ne varie pas :
