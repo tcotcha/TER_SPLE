@@ -8,19 +8,26 @@ Il faut rajouter des éléments variable, mais aussi définir plus en détails l
 - Le nombre d'ennemis
 - Les types d'ennemis
 - Les saisons (été-automne-hiver-printemps)
-- La hauteur du sol (par case)
+- Sol plus ou moins plat
+- Platforme friable
+- Le nombre de power-up et leur position ? (par niveau) 
+- Plateforme mobile verticalement ou horizontalement
+- Difficultés : moins de powerup, plus de trou, plus d'ennemis, taille des plateformes
+- Taille du niveau
 - 
 
 /*  ---- Si power-up --- */
 - La hit-box du joueur
 - La vitesse du joueur
-- La santé du joueur
-- Le nombre de power-up? (par niveau) 
--
+- Les vies du joueur
+- Possibilité de lancer des projectiles
+- Powerup mobile?
+- Powerup malus?
+- 
 
 
 &---Ce qui ne varie pas :
-- La taille du niveaux
 - La taille du joueur?
 - Le nombre de check-point par niveau (un seul à peu près au millieu du niveau ?)
-- 
+- Les points de variabilités ne changent pas pendant le niveau
+- Influences de saison sur GamePlay pas variable (ex: sol glissant glisse de la même manière)
