@@ -3,31 +3,31 @@ Domain requirement engineering :
 Il faut rajouter des éléments variables, mais aussi définir plus en détails les élements (Leur donner des cardinalités).
 
 &---Ce qui varie : 
-- Le nombre de plateformes
-- La longueur des plateformes
-- Le nombre d'ennemis
-- Les types d'ennemis
-- Les saisons (été-automne-hiver-printemps)
+- Le nombre de plateformes v
+- La longueur des plateformes v
+- Le nombre d'ennemis v
+- Les types d'ennemis v
+- Design ennemis v
+- Les saisons (été-automne-hiver-printemps) v
 - Sol plus ou moins plat
-- Platforme friable
-- Le nombre de power-up et leur position ? (par niveau) 
-- Plateforme mobile verticalement ou horizontalement
-- Difficultés : moins de powerup, plus de trou, plus d'ennemis, taille des plateformes
-- Taille du niveau
-- Raccourci?
+- Platforme friable v
+- Le nombre de power-up et leur position ? v (par niveau) 
+- Plateforme mobile verticalement ou horizontalement v
+- Difficultés : moins de powerup, plus de trou, plus d'ennemis, taille des plateformes ~
+- Taille du niveau ~
+- Raccourci? ~
 
 /*  ---- Si power-up --- */
-- La hit-box du joueur
-- La vitesse du joueur
-- Les vies du joueur
-- Possibilité de lancer des projectiles
-- Powerup mobile?
-- Powerup malus?
-- Temps d'action?
+- La hit-box du joueur v
+- La vitesse du joueur v
+- Les vies du joueur v
+- Possibilité de lancer des projectiles ~
+- Powerup mobile v (définir une mobilité ou non)
+- Powerup malus? v
+- Temps d'action? v
 
 
 &---Ce qui ne varie pas :
-- La taille du joueur?
-- Le nombre de check-point par niveau (un seul à peu près au millieu du niveau ?)
 - Les points de variabilités ne changent pas pendant le niveau
 - Influences de saison sur GamePlay pas variable (ex: sol glissant glisse de la même manière)
+- Présence : Joueur (caractéristiques), powerup, ennemis, trou, plateforme, checkpoints
