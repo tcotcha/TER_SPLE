@@ -11,16 +11,17 @@ public class Controller2D : MonoBehaviour {
 	public int verticalRayCount = 4;
 	float horizontalRaySpacing;
 	float verticalRaySpacing;
-	BoxCollider2D collider;
+	public BoxCollider2D collider;
 	RaycastOrigins raycastOrigins;
 	public CollisionInfo collisions;
 
 	public LayerMask collisionMask;
 
-	void Start () {
+	void Awake(){
 		collider = GetComponent<BoxCollider2D>();
+	}
+	void Start () {
 		CalculateRaySpacing ();
-
 	}
 
 	void Update () {

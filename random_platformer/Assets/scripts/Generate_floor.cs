@@ -8,6 +8,7 @@ public class Generate_floor : MonoBehaviour {
 	public GameObject summer_top;
 	public GameObject winter_bottom;
 	public GameObject winter_top;
+	public GameObject murFin;
 
 	public int season;
 	public int width;
@@ -20,6 +21,7 @@ public class Generate_floor : MonoBehaviour {
 	void Start () {
 		seed = Random.Range (-10000, 10000);
 		Generate ();
+		murFin.transform.position = new Vector3(width, transform.position.y,transform.position.z);
 	}
 
 	public void Generate() {
