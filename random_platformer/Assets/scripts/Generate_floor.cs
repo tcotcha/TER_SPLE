@@ -22,12 +22,12 @@ public class Generate_floor : MonoBehaviour {
 		seed = Random.Range (-10000, 10000);
 		Generate ();
 		murFin.transform.position = new Vector3(width, transform.position.y,transform.position.z);
+		Camera.main.GetComponent<Camera_follow> ().setMaxX (width-1);
 	}
 
 	public void Generate() {
 		for (int i = 0; i < width; i++) {
 			float h =Mathf.PerlinNoise(seed,i/smoothness)*heightMultiplier;
-			Debug.Log (h);
 			int i_h = Mathf.RoundToInt (h);
 			GameObject selected;
 			if (h > 1) {

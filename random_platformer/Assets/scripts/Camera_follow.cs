@@ -4,66 +4,36 @@ using UnityEngine;
 
 public class Camera_follow : MonoBehaviour {
 
-	public Controller2D target;
-	public Vector2 focusAreaSize;
-	FocusArea focusArea;
-	public float verticalOffSet;
+	private Vector2 velocity;
+
+	public float smoothTimeY;
+	public float smoothTimeX;
+
+	public GameObject player;
+
+	private int maxX;
+	private float height;
+	private float width; 
 
 	void Start () {
-		focusArea = new FocusArea (target.collider.bounds, focusAreaSize);
+		player = GameObject.FindGameObjectWithTag ("Player");
+		height = 2f * Camera.main.orthographicSize;
+		width = height * Camera.main.aspect;
 	}
 
-	void LateUpdate(){
-		focusArea.Update (target.collider.bounds);
-		Vector2 focusPosition = focusArea.centre + Vector2.up * verticalOffSet;
+	void FixedUpdate () {
+		float _x = Mathf.SmoothDamp (transform.position.x, player.transform.position.x,ref velocity.x,smoothTimeX);
+		float _y = Mathf.SmoothDamp (transform.position.y, player.transform.position.y,ref velocity.y,smoothTimeY);
 
-		transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+		float minY = -0.5f + height / 2f;
+		float minX = -0.5f + width/2f;
+		float max_X = (maxX + 0.5f) - (width / 2f);
+		transform.position = new Vector3 (Mathf.Clamp(_x,minX,max_X),Mathf.Clamp(_y,minY,100), transform.position.z);
+
+
 	}
 
-	void OnDrawGizmos(){
-		Gizmos.color = new Color (1, 0, 0, 0.5f);
-		Gizmos.DrawCube (focusArea.centre, focusAreaSize);
-	}
-
-	struct FocusArea {
-		public Vector2 centre;
-		public Vector2 velocity;
-		float left, right, top, bottom;
-
-		public FocusArea(Bounds targetBounds, Vector2 size){
-			left = targetBounds.center.x - size.x/2;
-			right = targetBounds.center.x + size.x/2;
-			bottom = targetBounds.min.y;
-			top = targetBounds.min.y + size.y;
-			velocity = Vector2.zero;
-			centre = new Vector2((left+right)/2,(top+bottom)/2);
-		}
-
-		public void Update(Bounds targetBounds){
-			float shiftX = 0;
-			if (targetBounds.min.x < left) {
-				shiftX = targetBounds.min.x - left; 
-			} else if (targetBounds.max.x > right) {
-				shiftX = targetBounds.max.x - right;
-			}
-			left += shiftX;
-			right += shiftX;
-		
-			float shiftY = 0;
-			if (targetBounds.min.y < bottom) {
-				shiftY = targetBounds.min.y - bottom;
-			} else if (targetBounds.max.y > top) {
-				shiftY = targetBounds.max.y - top;
-			}
-			top += shiftY;
-			bottom += shiftY;
-			centre = new Vector2((left+right)/2,(top+bottom)/2);
-			velocity = new Vector2(shiftX,shiftY);
-
-		}
-	}
-
-	void Update () {
-		
+	public void setMaxX(int _x){
+		maxX = _x;
 	}
 }

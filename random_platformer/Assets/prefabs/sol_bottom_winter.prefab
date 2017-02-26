@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4361388862713404}
   - component: {fileID: 212077977129138152}
   - component: {fileID: 61430402174215812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sol_bottom_winter
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1964315116695852}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bf0dce8f228347a48b761aa8c8c612ec, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
