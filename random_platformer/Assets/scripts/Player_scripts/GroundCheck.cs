@@ -5,7 +5,6 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D trigger){
-
 		if (trigger.gameObject.tag == "Ground")	{
 			GetComponentInParent<Player> ().setGrounded (true);
 		}

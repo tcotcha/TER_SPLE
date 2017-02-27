@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 697763769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.015, y: 0.004, z: 0}
+  m_LocalPosition: {x: -0.015, y: -0.022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1332347723}
@@ -143,9 +143,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.057391405, y: -0.298061}
+  m_Offset: {x: 0.05739142, y: -0.29168397}
   serializedVersion: 2
-  m_Size: {x: 0.307611, y: 0.09285712}
+  m_Size: {x: 0.307611, y: 0.08010289}
 --- !u!1001 &1111955702
 Prefab:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1332347721}
   - component: {fileID: 1332347725}
   - component: {fileID: 1332347726}
-  - component: {fileID: 1332347724}
+  - component: {fileID: 1332347727}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -292,20 +292,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1332347724
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1332347720}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.043739676, y: -0.009719849}
-  serializedVersion: 2
-  m_Size: {x: 0.3582811, y: 0.5798409}
 --- !u!114 &1332347725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +326,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &1332347727
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1332347720}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.051018506, y: -0.0127539635}
+  m_Size: {x: 0.3344291, y: 0.59646606}
+  m_Direction: 0
 --- !u!1 &1468045854
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
   winter_top: {fileID: 1660140388615464, guid: 5cca6483c35a3c745867580da3015bf1, type: 2}
   murFin: {fileID: 1754843639}
   season: 0
-  width: 20
+  width: 150
   heightMultiplier: 5
   smoothness: 7
 --- !u!4 &1468045856
