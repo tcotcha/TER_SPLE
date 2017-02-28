@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour {
 
-	void OnTriggerEnter2D(Collider2D trigger){
-		if (trigger.gameObject.tag == "Ground")	{
-			GetComponentInParent<Player> ().setGrounded (true);
-		}
-	}
+	private int nb = 0;
 
-	void OnTriggerStay2D(Collider2D trigger){
-		
-		if (trigger.gameObject.tag == "Ground")	{
+	void OnTriggerEnter2D(Collider2D trigger){
+		if (trigger.gameObject.tag == "Ground" && nb == 0)	{
 			GetComponentInParent<Player> ().setGrounded (true);
 		}
+		nb++;
 	}
 
 	void OnTriggerExit2D(Collider2D trigger){
-		if (trigger.gameObject.tag == "Ground")	{
+		nb--;
+		if (trigger.gameObject.tag == "Ground" && nb == 0)	{
 			GetComponentInParent<Player> ().setGrounded (false);
 		}
 	}

@@ -28,10 +28,8 @@ public class Player : MonoBehaviour {
 		anim.SetFloat("speed",Mathf.Abs(rg2d.velocity.x));
 
 		//Rotate player
-		if (Input.GetAxis ("Horizontal")<-0.1f) {
-			transform.localScale = new Vector2 (-1, 1);
-		}else if (Input.GetAxis ("Horizontal") > 0.1f) {
-			transform.localScale = new Vector2 (1, 1);
+		if (Input.GetAxis ("Horizontal") != 0) {
+			transform.localScale = new Vector2 (Mathf.Sign(Input.GetAxis ("Horizontal"))*transform.localScale.x, transform.localScale.y);
 		}
 	}
 
