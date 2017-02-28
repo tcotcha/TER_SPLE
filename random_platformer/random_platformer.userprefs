@@ -4,8 +4,8 @@
     <Files>
       <File FileName="Assets\scripts\Camera_follow.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Generate_floor.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Player_scripts\GroundCheck.cs" Line="7" Column="20" />
-      <File FileName="Assets\scripts\Player_scripts\Player.cs" Line="32" Column="45" />
+      <File FileName="Assets\scripts\Player_scripts\GroundCheck.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Player_scripts\Player.cs" Line="32" Column="114" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

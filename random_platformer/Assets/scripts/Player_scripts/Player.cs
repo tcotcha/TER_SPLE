@@ -29,7 +29,7 @@ public class Player : MonoBehaviour {
 
 		//Rotate player
 		if (Input.GetAxis ("Horizontal") != 0) {
-			transform.localScale = new Vector2 (Mathf.Sign(Input.GetAxis ("Horizontal"))*transform.localScale.x, transform.localScale.y);
+			transform.localScale = new Vector2 (Mathf.Sign(Input.GetAxis ("Horizontal"))*Mathf.Abs(transform.localScale.x), transform.localScale.y);
 		}
 	}
 
