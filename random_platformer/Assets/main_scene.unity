@@ -285,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332347720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: -0.01}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 697763770}
@@ -374,7 +374,7 @@ MonoBehaviour:
     type: 2}
   winter_top: {fileID: 1660140388615464, guid: 5cca6483c35a3c745867580da3015bf1, type: 2}
   murFin: {fileID: 1754843639}
-  season: 0
+  season: 1
   width: 150
   heightMultiplier: 5
   smoothness: 7

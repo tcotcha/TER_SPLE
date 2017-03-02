@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
 
 
 	void Start () {
+		//affiche le niveau choisis
+		print ("niveau choisis "+PlayerPrefs.GetString("Player Level"));
 
 		//Init Component
 		rg2d = GetComponent<Rigidbody2D> ();
@@ -31,6 +33,9 @@ public class Player : MonoBehaviour {
 		if (Input.GetAxis ("Horizontal") != 0) {
 			transform.localScale = new Vector2 (Mathf.Sign(Input.GetAxis ("Horizontal"))*Mathf.Abs(transform.localScale.x), transform.localScale.y);
 		}
+		//Revenir au menu en appuyant sur "echap"
+		if (Input.GetKeyDown (KeyCode.Escape))
+			Application.LoadLevel("menu");
 	}
 
 	void FixedUpdate () {
@@ -56,7 +61,7 @@ public class Player : MonoBehaviour {
 		}
 
 		//Jumping
-		if(Input.GetButtonDown("Jump") &&  grounded){
+		if((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))  &&  grounded){
 			rg2d.velocity = new Vector3 (0,jmpHeight,0);
 		}
 	}
