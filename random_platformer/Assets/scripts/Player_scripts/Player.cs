@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
 	public float maxSpeed = 2f;
 	public float speed = 150f;
-	public float jmpHeight = 4f;
+	public float jmpHeight = 0f;
 
 	private bool grounded;//True if the player is on the ground
 
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour {
 		}
 		//Revenir au menu en appuyant sur "echap"
 		if (Input.GetKeyDown (KeyCode.Escape))
-			Application.LoadLevel("menu");
+			SceneManager.LoadScene("menu");
 	}
 
 	void FixedUpdate () {
@@ -62,7 +63,8 @@ public class Player : MonoBehaviour {
 
 		//Jumping
 		if((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))  &&  grounded){
-			rg2d.velocity = new Vector3 (0,jmpHeight,0);
+			Vector2 tmp = new Vector3 (0,jmpHeight);
+			rg2d.velocity = rg2d.velocity+tmp;
 		}
 	}
 

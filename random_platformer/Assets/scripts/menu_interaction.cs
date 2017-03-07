@@ -39,7 +39,7 @@ public class menu_interaction : MonoBehaviour {
 	}
 
 	public void startGame(){
-		Application.LoadLevel("main_scene");
+		SceneManager.LoadScene("main_scene");
 	}
 
 	public void exitGame(){
