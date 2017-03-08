@@ -1,0 +1,57 @@
+{
+  "niveau de jeu":
+    {
+  "ennemi": [
+    7,
+    10,
+    [
+      "positionX": 0,
+      ["bumper",
+      "tireur"
+    ]
+    ]
+  ],
+  "plateforme": [
+    5,
+    10,
+    [
+      "positionX" : 0,
+      "mobilité": [
+        "mobile": [
+          "direction": [
+            "verticale",
+            "horizontale"
+          ]
+        ],
+        "immobile": [
+          "friabe"
+        ]
+      ],
+      "largeur": 0
+    ]
+  ],
+  "piege": [
+    6,
+    10,
+    [
+    "positionX": 0,
+    "longueur": 0
+    ]
+  ],
+  "power-up": [
+    0,
+    2,
+    [
+      "limité": [
+        "jumpBoost",
+        "inversementTouches"
+      ],
+      "illimité": [
+        "vieUp",
+        "vieDown"
+      ]
+    ]
+  ],
+  "difficulte": "difficile"
+  }
+}
