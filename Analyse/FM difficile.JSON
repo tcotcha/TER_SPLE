@@ -1,57 +1,35 @@
 {
-  "niveau de jeu":
-    {
-  "ennemi": [
-    7,
-    10,
-    [
-      "positionX": 0,
-      ["bumper",
-      "tireur"
-    ]
-    ]
-  ],
-  "plateforme": [
-    5,
-    10,
-    [
-      "positionX" : 0,
-      "mobilité": [
-        "mobile": [
-          "direction": [
-            "verticale",
-            "horizontale"
-          ]
-        ],
-        "immobile": [
-          "friabe"
-        ]
-      ],
-      "largeur": 0
-    ]
-  ],
-  "piege": [
-    6,
-    10,
-    [
-    "positionX": 0,
-    "longueur": 0
-    ]
-  ],
-  "power-up": [
-    0,
-    2,
-    [
-      "limité": [
+  "taille":{
+    "min":120,
+    "max":150
+  },
+  "ennemi": {
+    "min" :7,
+    "max" :10,
+    "type":  ["bumper",
+      "tireur"]
+  },
+  "plateforme": {
+    "min" :5,
+    "max" :10,
+    "largeurMin":1,
+    "largeurMax":3
+  },
+  "piege": {
+    "min":6,
+    "max":10,
+    "largeurMin":3,
+    "largeurMax":5
+  },
+  "power-up":{
+    "min":0,
+    "max":2,
+    "type": [
         "jumpBoost",
-        "inversementTouches"
-      ],
-      "illimité": [
+        "inversementTouches",
         "vieUp",
         "vieDown"
       ]
-    ]
-  ],
+  },
   "difficulte": "difficile"
-  }
 }
