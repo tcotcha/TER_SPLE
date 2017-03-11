@@ -7,7 +7,7 @@ public class GroundCheck : MonoBehaviour {
 	private int nb = 0;
 
 	void OnTriggerEnter2D(Collider2D trigger){
-		if (trigger.gameObject.tag == "Ground" && nb == 0)	{
+		if (trigger.gameObject.tag == "Ground")	{
 			GetComponentInParent<Player> ().setGrounded (true);
 		}
 		nb++;
@@ -18,5 +18,9 @@ public class GroundCheck : MonoBehaviour {
 		if (trigger.gameObject.tag == "Ground" && nb == 0)	{
 			GetComponentInParent<Player> ().setGrounded (false);
 		}
+	}
+
+	public void setNb(int n){
+		nb = n;
 	}
 }

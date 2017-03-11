@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 
 	void Start () {
 		//affiche le niveau choisis
-		print ("niveau choisis "+PlayerPrefs.GetString("Player Level"));
+		print ("niveau  "+PlayerPrefs.GetString("Player Level"));
 
 		//Init Component
 		rg2d = GetComponent<Rigidbody2D> ();

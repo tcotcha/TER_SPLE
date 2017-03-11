@@ -18,4 +18,8 @@ public class Mobile : Plateforme {
 	public float getPosFinY(){
 		return positionFinY;
 	}
+
+	public string toString(){
+		return "{ \"largeur\" : " + getLargeur () +", \"x\" : " + getPosX () +", \"y\" : " + getPosY () +", \"Finx\" : " + getPosFinX () +", \"Finy\" : " + getPosFinY () + " }";
+	}
 }

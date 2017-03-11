@@ -12,4 +12,7 @@ public class Immobile : Plateforme {
 	public bool getFriable(){
 		return friable;
 	}
+	public string toString(){
+		return "{ \"largeur\" : " + getLargeur () +", \"x\" : " + getPosX () +", \"y\" : " + getPosY () + ", \"friable\" : " + friable +" }";
+	}
 }

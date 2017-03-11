@@ -16,4 +16,7 @@ public class Bumper : Ennemis {
 	public void changeDirection(){
 		direction *= -1;
 	}
+	public string toString(){
+		return "{ \"x\" : " + getPosX () + ", \"y\" : " + getPosY () + ", \"direction\" : " + direction +" }";
+	}
 }
