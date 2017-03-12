@@ -1,0 +1,35 @@
+{
+  "taille":{
+    "min":120,
+    "max":150
+  },
+  "ennemi": {
+    "min" :7,
+    "max" :10,
+    "type":  ["bumper",
+      "tireur"]
+  },
+  "plateforme": {
+    "min" :5,
+    "max" :10,
+    "largeurMin":1,
+    "largeurMax":3
+  },
+  "piege": {
+    "min":6,
+    "max":10,
+    "largeurMin":3,
+    "largeurMax":5
+  },
+  "power-up":{
+    "min":0,
+    "max":2,
+    "type": [
+        "jumpBoost",
+        "inversementTouches",
+        "vieUp",
+        "vieDown"
+      ]
+  },
+  "difficulte": "difficile"
+}
