@@ -282,15 +282,15 @@ for i in xPlatforms:
 	l = randint(data["plateforme"]["largeurMin"],data["plateforme"]["largeurMax"])
 	if mob == 0:
 		if difficulte == 1:
-			plateformes.append(Immobile(l,x,y,False))
+			plateformes.append(Immobile(l,i,y,False))
 		elif difficulte == 3:
-			plateformes.append(Immobile(l,x,y,True))
+			plateformes.append(Immobile(l,i,y,True))
 		else :
 			p = randint(0,1)
 			if p == 0:
-				plateformes.append(Immobile(l,x,y,False))
+				plateformes.append(Immobile(l,i,y,False))
 			else:
-				plateformes.append(Immobile(l,x,y,True))
+				plateformes.append(Immobile(l,i,y,True))
 	else:
 		h = randint(0,1)
 		v = randint(0,1)
@@ -318,7 +318,7 @@ for i in itemsX:
 		i+=1
 		while sol[i] == 0:
 			i+=1
-	itemName = data["power-up"]["type"][randint(0,len(data["power-up"]["type"]))]
+	itemName = data["power-up"]["type"][randint(0,len(data["power-up"]["type"])-1)]
 	if itemName == "jumpBoost":
 		items.append(JumpBoost(10,i,sol[i]+1))
 	elif itemName == "invincible":
