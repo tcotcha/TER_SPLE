@@ -217,12 +217,17 @@ if nbPieges != 0:
 		if i == 0:
 			pos = randint(10+tmp*i,tmp*(i+1))
 		elif i == nbPieges-1 :
-			pos = randint(tmp*i,tmp*(i+1)-data["piege"]["largeurMax"])
+			pos = randint(tmp*i,tmp*(i+1)-data["piege"]["largeurMax"]-1)
 		else:
 			pos = randint(tmp*i,tmp*(i+1))
 		l = randint(data["piege"]["largeurMin"],data["piege"]["largeurMax"])
 		while sol[pos-1] < sol[pos + l]:
-			pos = randint(10+tmp*i,tmp*(i+1))
+			if i == 0:
+				pos = randint(10+tmp*i,tmp*(i+1))
+			elif i == nbPieges-1 :
+				pos = randint(tmp*i,tmp*(i+1)-data["piege"]["largeurMax"]-1)
+			else:
+				pos = randint(tmp*i,tmp*(i+1))
 			l = randint(data["piege"]["largeurMin"],data["piege"]["largeurMax"])
 		pieges.append(Pieges(l,pos))
 
@@ -250,51 +255,53 @@ joueur = Joueur(0,sol[0]+1)
 #Platforms creation
 plateformes = []
 for i in pieges:
-	mob = randint(0,1)
-	x = i.positionX+1
-	y = sol[i.positionX-1]+0.5
-	l = randint(data["plateforme"]["largeurMin"],data["plateforme"]["largeurMax"])
-	if mob == 0:
-		if difficulte == 1:
-			plateformes.append(Immobile(l,x,y,False))
-		elif difficulte == 3:
-			plateformes.append(Immobile(l,x,y,True))
-		else :
-			p = randint(0,1)
-			if p == 0:
+	if i.longueur == data["piege"]["largeurMax"]:
+		mob = randint(0,1)
+		x = i.positionX+1
+		y = sol[i.positionX-1]+0.5
+		l = randint(data["plateforme"]["largeurMin"],data["plateforme"]["largeurMax"])
+		if mob == 0:
+			if difficulte == 1:
 				plateformes.append(Immobile(l,x,y,False))
-			else:
+			elif difficulte == 3:
 				plateformes.append(Immobile(l,x,y,True))
-	else:
-		h = randint(0,1)
-		v = randint(0,1)
-		plateformes.append(Mobile(l,x,y,x+h*5,y+v*5))
-	nbPlateformes -= 1
+			else :
+				p = randint(0,1)
+				if p == 0:
+					plateformes.append(Immobile(l,x,y,False))
+				else:
+					plateformes.append(Immobile(l,x,y,True))
+		else:
+			h = randint(0,1)
+			v = randint(0,1)
+			plateformes.append(Mobile(l,x,y,x+h*5,y+v*5))
+		nbPlateformes -= 1
 
-xPlatforms = sample(range(10, taille-1), nbPlateformes)
-for i in xPlatforms:
-	if sol[i] == 0:
-		i+=1
-		while sol[i] == 0:
+if nbPlateformes > 0:
+	xPlatforms = sample(range(10, taille-1), nbPlateformes)
+	for i in xPlatforms:
+		if sol[i] == 0:
 			i+=1
-	mob = randint(0,1)
-	y = sol[i]+0.5
-	l = randint(data["plateforme"]["largeurMin"],data["plateforme"]["largeurMax"])
-	if mob == 0:
-		if difficulte == 1:
-			plateformes.append(Immobile(l,i,y,False))
-		elif difficulte == 3:
-			plateformes.append(Immobile(l,i,y,True))
-		else :
-			p = randint(0,1)
-			if p == 0:
+			while sol[i] == 0:
+				i+=1
+		mob = randint(0,1)
+		y = sol[i]+0.5
+		l = randint(data["plateforme"]["largeurMin"],data["plateforme"]["largeurMax"])
+		if mob == 0:
+			if difficulte == 1:
 				plateformes.append(Immobile(l,i,y,False))
-			else:
+			elif difficulte == 3:
 				plateformes.append(Immobile(l,i,y,True))
-	else:
-		h = randint(0,1)
-		v = randint(0,1)
-		plateformes.append(Mobile(l,i,y,i+h*5,y+v*5))
+			else :
+				p = randint(0,1)
+				if p == 0:
+					plateformes.append(Immobile(l,i,y,False))
+				else:
+					plateformes.append(Immobile(l,i,y,True))
+		else:
+			h = randint(0,1)
+			v = randint(0,1)
+			plateformes.append(Mobile(l,i,y,i+h*5,y+v*5))
 
 #Ennmies creation
 ennemis = []
