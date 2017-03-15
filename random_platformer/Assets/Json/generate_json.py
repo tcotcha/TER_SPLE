@@ -101,6 +101,7 @@ class Niveau(object):
 		self.plateformes = plateformes
 		self.ennemies = ennemis
 		self.items = items
+		self.saison = randint(0,1)
 
 def serialiseur(obj):
 	if isinstance(obj,VieMalus):
@@ -132,21 +133,25 @@ def serialiseur(obj):
 				"y":obj.y,
 				"duree":obj.duree}
 	if isinstance(obj,Mobile):
-			return {"largeur":obj.largeur,
+			return {"type":obj.__class__.__name__,
+					"largeur":obj.largeur,
 					"x":obj.positionX,
 					"y":obj.positionY,
 					"finX":obj.positionFinX,
 					"finY":obj.positionFinY}
 	if isinstance(obj,Immobile):
-		return {"largeur":obj.largeur,
+		return {"type":obj.__class__.__name__,
+				"largeur":obj.largeur,
 				"x":obj.positionX,
 				"y":obj.positionY,
 				"friable":obj.friable}
 	if isinstance(obj,Tireur):
-		return {"x":obj.x,
+		return {"type":obj.__class__.__name__,
+				"x":obj.x,
 				"y":obj.y}
 	if isinstance(obj,Bumper):
-		return {"x":obj.x,
+		return {"type":obj.__class__.__name__,
+				"x":obj.x,
 				"y":obj.y,
 				"direction":obj.direction}
 	if isinstance(obj,Joueur):
@@ -165,6 +170,7 @@ def serialiseur(obj):
 				"positionX":obj.positionX}
 	if isinstance(obj,Niveau):
 		return {"difficulte":obj.difficulte,
+				"saison":obj.saison,
 				"taille":obj.taille,
 				"hauteurBlocs":obj.hauteurBlocs,
 				"joueur":obj.joueur,
