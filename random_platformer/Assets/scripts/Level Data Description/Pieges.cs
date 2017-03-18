@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class Pieges {
 
-	private int longeur;
-	private float positionX;
+	public int longueur;
+	public float positionX;
 
 	public Pieges(int l, float x){
-		longeur = l;
+		longueur = l;
 		positionX = x;
 	}
 
 	private int getLongeur(){
-		return longeur;
+		return longueur;
 	}
 
 	private float getPosition(){

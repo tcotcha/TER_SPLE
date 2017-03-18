@@ -1,27 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-public class Plateforme {
+[System.Serializable]
+public abstract class Plateforme
+{
+	public int largeur;
+	public float positionX;
+	public float positionY;
 
-	private int largeur;
-	private float positionX;
-	private float positionY;
+	public Plateforme(int x, float y, float z) {
+		largeur = x;
+		positionX = y;
+		positionY = z;
+	}
+	
+	public abstract bool getFriable();
+	public abstract float getPosFinX ();
+	public abstract float getPosFinY ();
 
-	public Plateforme(int l,float x,float y){
-		largeur = l;
-		positionX = x;
-		positionY = y;
+	public virtual string Affiche (){
+		return "{ \"largeur\" : " + largeur +", \"x\" : " + positionX +", \"y\" : " + positionY;
 	}
 
-	public int getLargeur(){
-		return largeur;
-	}
-
-	public float getPosX(){
-		return positionX;
-	}
-
-	public float getPosY(){
-		return positionY;
-	}
 }

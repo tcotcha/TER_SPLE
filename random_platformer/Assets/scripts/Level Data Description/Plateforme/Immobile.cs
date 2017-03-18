@@ -1,18 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class Immobile : Plateforme {
 
-	private bool friable;
+	public bool friable;
 
 	public Immobile(int l,float x,float y,bool f):base(l,x,y){
 		friable = f;
 	}
 
-	public bool getFriable(){
+	public override bool getFriable(){
 		return friable;
 	}
-	public string toString(){
-		return "{ \"largeur\" : " + getLargeur () +", \"x\" : " + getPosX () +", \"y\" : " + getPosY () + ", \"friable\" : " + friable +" }";
+
+	public override float getPosFinX(){
+		throw new System.InvalidOperationException("Une plateforme immobile n'a pas de positionFinX");
+	}
+
+	public override float getPosFinY(){
+		throw new System.InvalidOperationException("Une plateforme immobile n'a pas de positionFinY");
+	}
+
+	
+	public override string Affiche(){
+		return base.Affiche() + ", friable : "+ friable +" }";
 	}
 }

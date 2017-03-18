@@ -48,22 +48,23 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\Camera_follow.cs" />
      <Compile Include="Assets\scripts\Generate_floor.cs" />
+     <Compile Include="Assets\scripts\GenerationNiveau.cs" />
      <Compile Include="Assets\scripts\Level Data Description\CheckPoint.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\Ennemies\Bumper.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\Ennemies\Ennemis.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\Ennemies\Tireur.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\Ennemis\Bumper.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\Ennemis\Ennemis.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\Ennemis\Tireur.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Joueur.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Niveau.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Pieges.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Plateforme\Immobile.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Plateforme\Mobile.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Plateforme\Plateforme.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\items\Inversement.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\items\Invincibilite.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\items\Items.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\items\JumpBoost.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\items\VieBonus.cs" />
-     <Compile Include="Assets\scripts\Level Data Description\items\VieMalus.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\PowerUp\Inversement.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\PowerUp\Invincibilite.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\PowerUp\JumpBoost.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\PowerUp\PowerUp.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\PowerUp\VieBonus.cs" />
+     <Compile Include="Assets\scripts\Level Data Description\PowerUp\VieMalus.cs" />
      <Compile Include="Assets\scripts\Player_scripts\GroundCheck.cs" />
      <Compile Include="Assets\scripts\Player_scripts\Player.cs" />
      <Compile Include="Assets\scripts\menu_interaction.cs" />
@@ -86,6 +87,9 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/Tib0/Desktop/Tib0/Github/TER_SPLE/random_platformer/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

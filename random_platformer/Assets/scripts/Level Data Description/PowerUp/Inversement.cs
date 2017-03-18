@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
-public class Inversement : Items {
+[System.Serializable]
+public class Inversement : PowerUp {
 
 	private float duree;
 
@@ -9,7 +9,7 @@ public class Inversement : Items {
 		duree = d;
 	}
 
-	public float getDuree(){
+	public override float getDuree(){
 		return duree;
 	}
 }

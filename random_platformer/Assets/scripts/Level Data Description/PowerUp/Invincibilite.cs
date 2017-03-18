@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
-public class Invincibilite : Items {
+[System.Serializable]
+public class Invincibilite : PowerUp {
 
 	private float duree;
 
@@ -9,7 +9,7 @@ public class Invincibilite : Items {
 		duree = d;
 	}
 
-	public float getDuree(){
+	public override float getDuree(){
 		return duree;
 	}
 }

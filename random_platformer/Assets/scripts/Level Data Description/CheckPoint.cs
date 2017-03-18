@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class CheckPoint {
 
 	private static CheckPoint instance;
-	private float x;
-	private float y;
-	private bool actif;
+	public float x { get; set; }
+	public float y { get; set; }
+	public bool actif { get; set; }
 
-	private CheckPoint(float _x,float _y){
+	public CheckPoint(float _x,float _y){
 		x = _x;
 		y = _y;
 		actif = false;
+	}
+
+	public CheckPoint(){
 	}
 
 	public static CheckPoint getInstance(float _x,float _y){

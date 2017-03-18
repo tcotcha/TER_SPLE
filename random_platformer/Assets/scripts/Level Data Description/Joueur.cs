@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Joueur {
 
 	private static Joueur instance;
@@ -11,7 +12,7 @@ public class Joueur {
 	private float x;
 	private float y;
 
-	private Joueur(float _x,float _y){
+	public Joueur(float _x,float _y){
 		nbVies = 3;
 		hauteurSaut = 1;
 		vitesse = 2;
