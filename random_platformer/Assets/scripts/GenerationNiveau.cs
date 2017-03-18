@@ -40,7 +40,7 @@ public class GenerationNiveau : MonoBehaviour {
 		*/
 		niveau.difficulte = element_niveau ["difficulte"].Value<int> ();
 		niveau.taille = element_niveau ["taille"].Value<int> ();
-
+		niveau.saison = element_niveau ["saison"].Value<int> ();
 		/*
 		 * HauteurBloc
 		*/
@@ -145,6 +145,7 @@ public class GenerationNiveau : MonoBehaviour {
 			}
 		}
 		Debug.Log ("Liste_powerups : Fait");
+		Debug.Log (niveau.Affiche ());
 	}
 
 }
