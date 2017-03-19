@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
+	public GameObject box;
+
 	public float maxSpeed = 2f;
 	public float speed = 150f;
 	public float jmpHeight = 0f;
@@ -14,7 +16,6 @@ public class Player : MonoBehaviour {
 
 	private Rigidbody2D rg2d;
 	private Animator anim;
-
 
 	void Start () {
 		//affiche le niveau choisis
@@ -70,6 +71,13 @@ public class Player : MonoBehaviour {
 
 	public void setGrounded(bool g){
 		grounded = g;
+	}
+
+	public void die(){
+		box.SetActive (true);
+		transform.localPosition = new Vector3 (0, 8, 0);
+		box.SetActive (false);
+		GetComponentInChildren<GroundCheck>().setNb (0);
 	}
 }
 

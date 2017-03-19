@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
+using System.Diagnostics;
 
 public class menu_interaction : MonoBehaviour {
 
@@ -14,9 +15,12 @@ public class menu_interaction : MonoBehaviour {
 	public GameObject cadre;
 	private int positionNiveau;
 
+	private static int nbLevels;
+
 	void Start(){
 		choixNiveau (1);
 		positionNiveau = 1;
+		nbLevels = System.IO.Directory.GetFiles ("Assets/Json/Generated/", "*.json", System.IO.SearchOption.TopDirectoryOnly).Length;
 	}
 
 	void Update(){
@@ -39,6 +43,42 @@ public class menu_interaction : MonoBehaviour {
 	}
 
 	public void startGame(){
+		string pathScript = "Assets/Json/generate_json.py";
+		string pathIn = "Assets/Json/";
+		string pathOut = "Assets/Json/Generated/";
+		switch(positionNiveau){
+		case 1:
+			pathIn += "FM_facile.json";
+			pathOut = pathOut + "easy_" + nbLevels + ".json";
+			nbLevels++;
+			break;
+		case 2:
+			pathIn += "FM_moyen.json";
+			pathOut = pathOut + "medium_" + nbLevels + ".json";
+			nbLevels++;
+			break;
+		case 3:
+			pathIn += "FM_difficile.json";
+			pathOut = pathOut + "hard_" + nbLevels + ".json";
+			nbLevels++;
+			break;
+		default:
+			pathIn += "FM_moyen.json";
+			break;
+		}
+		PlayerPrefs.SetString("Json", pathOut);
+		string cmd = pathScript + " " + pathIn + " " + pathOut;
+
+		Process p = new Process ();
+		p.StartInfo.FileName = "python";
+		p.StartInfo.Arguments = cmd;
+
+		p.StartInfo.UseShellExecute = false;
+		p.StartInfo.CreateNoWindow = true;
+		p.Start ();
+		p.WaitForExit ();
+		p.Close ();
+
 		SceneManager.LoadScene("main_scene");
 	}
 

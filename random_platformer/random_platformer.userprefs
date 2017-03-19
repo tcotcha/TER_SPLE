@@ -1,13 +1,8 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\StreamingAssets\test.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\menu_interaction.cs">
     <Files>
-      <File FileName="Assets\scripts\GenerationNiveau.cs" Line="148" Column="33" />
-      <File FileName="Assets\scripts\Level Data Description\Niveau.cs" Line="29" Column="43" />
-      <File FileName="Assets\scripts\Level Data Description\Ennemis\Ennemis.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Level Data Description\Ennemis\Bumper.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Level Data Description\Ennemis\Tireur.cs" Line="1" Column="1" />
-      <File FileName="Assets\StreamingAssets\test.json" Line="338" Column="14" />
+      <File FileName="Assets\scripts\menu_interaction.cs" Line="77" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
