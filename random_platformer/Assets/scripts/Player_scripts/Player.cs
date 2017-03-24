@@ -42,7 +42,13 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate () {
 
-		Vector3 friction = new Vector3 (rg2d.velocity.x * 0.7f, rg2d.velocity.y, 0.0f);
+        Vector3 friction;
+        if (GameObject.Find("Handler").GetComponent<GenerationNiveau>().getNiveau().saison != 0)
+        {
+            friction = new Vector3(rg2d.velocity.x * 0.7f, rg2d.velocity.y, 0.0f);
+        }else { 
+            friction = new Vector3(rg2d.velocity.x * 0.95f, rg2d.velocity.y, 0.0f);
+        }
 
 		//Get Input
 		float h = Input.GetAxis ("Horizontal");
@@ -66,6 +72,13 @@ public class Player : MonoBehaviour {
 		if((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))  &&  grounded){
 			Vector2 tmp = new Vector3 (0,jmpHeight);
 			rg2d.velocity = rg2d.velocity+tmp;
+		}
+
+		//Fast falling
+		if (rg2d.velocity.y < 0) {
+			rg2d.gravityScale = 2;
+		} else {
+			rg2d.gravityScale = 1;
 		}
 	}
 

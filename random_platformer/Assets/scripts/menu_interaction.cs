@@ -20,7 +20,7 @@ public class menu_interaction : MonoBehaviour {
 	void Start(){
 		choixNiveau (1);
 		positionNiveau = 1;
-		nbLevels = System.IO.Directory.GetFiles ("Assets/Json/Generated/", "*.json", System.IO.SearchOption.TopDirectoryOnly).Length;
+		nbLevels = System.IO.Directory.GetFiles ("Json/Generated/", "*.json", System.IO.SearchOption.TopDirectoryOnly).Length;
 	}
 
 	void Update(){
@@ -43,9 +43,9 @@ public class menu_interaction : MonoBehaviour {
 	}
 
 	public void startGame(){
-		string pathScript = "Assets/Json/generate_json.py";
-		string pathIn = "Assets/Json/";
-		string pathOut = "Assets/Json/Generated/";
+		string pathScript = "Json/generate_json.py";
+		string pathIn = "Json/";
+		string pathOut = "Json/Generated/";
 		switch(positionNiveau){
 		case 1:
 			pathIn += "FM_facile.json";
@@ -70,7 +70,7 @@ public class menu_interaction : MonoBehaviour {
 		string cmd = pathScript + " " + pathIn + " " + pathOut;
 
 		Process p = new Process ();
-		p.StartInfo.FileName = "python";
+		p.StartInfo.FileName = "Python/python.exe";
 		p.StartInfo.Arguments = cmd;
 
 		p.StartInfo.UseShellExecute = false;

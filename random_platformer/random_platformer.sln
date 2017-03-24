@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "random_platformer", "Assembly-CSharp.csproj", "{546E0F85-DA64-BAED-253D-573B36FBB275}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "random_platformer", "random_platformer.csproj", "{4040690A-E24F-D330-6FA8-1A87A3F7C369}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{546E0F85-DA64-BAED-253D-573B36FBB275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{546E0F85-DA64-BAED-253D-573B36FBB275}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{546E0F85-DA64-BAED-253D-573B36FBB275}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{546E0F85-DA64-BAED-253D-573B36FBB275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4040690A-E24F-D330-6FA8-1A87A3F7C369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4040690A-E24F-D330-6FA8-1A87A3F7C369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4040690A-E24F-D330-6FA8-1A87A3F7C369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4040690A-E24F-D330-6FA8-1A87A3F7C369}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 058ac14a99067b2479b5885404f1bae9
 timeCreated: 1489826580
+=======
+guid: f16795d72de53894d9b6bfe58fe8db6b
+timeCreated: 1489575908
+>>>>>>> Stashed changes
 licenseType: Free
 PluginImporter:
   serializedVersion: 1
@@ -11,11 +16,62 @@ PluginImporter:
   platformData:
     Any:
       enabled: 1
+<<<<<<< Updated upstream
       settings: {}
     Editor:
       enabled: 0
       settings:
         DefaultValueInitialized: true
+=======
+      settings:
+        Exclude Editor: 0
+        Exclude Linux: 0
+        Exclude Linux64: 0
+        Exclude LinuxUniversal: 0
+        Exclude OSXIntel: 0
+        Exclude OSXIntel64: 0
+        Exclude OSXUniversal: 0
+        Exclude Win: 0
+        Exclude Win64: 0
+    Editor:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+        DefaultValueInitialized: true
+        OS: AnyOS
+    Linux:
+      enabled: 1
+      settings:
+        CPU: x86
+    Linux64:
+      enabled: 1
+      settings:
+        CPU: x86_64
+    LinuxUniversal:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    OSXIntel:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    OSXIntel64:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    OSXUniversal:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    Win:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+    Win64:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+>>>>>>> Stashed changes
     WindowsStoreApps:
       enabled: 0
       settings:

@@ -7,6 +7,8 @@ public class trigger_sol : MonoBehaviour {
 	public GameObject box;
 
 	public void OnTriggerEnter2D(Collider2D other) {
-		player.GetComponent<Player> ().die ();
+		if (other.gameObject.tag == "Player") {
+			player.GetComponent<Player> ().die ();
+		}
 	}
 }

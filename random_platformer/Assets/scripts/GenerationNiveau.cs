@@ -4,21 +4,50 @@ using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 
 public class GenerationNiveau : MonoBehaviour {
+	private Niveau niveau;
+
 	void Start () {
+		DateTime start = DateTime.Now;
+		chargerJson (PlayerPrefs.GetString ("Json"));
+		chargerNiveau ();
+        GameObject.Find("mur_fin").transform.position = new Vector3(niveau.taille, transform.position.y, transform.position.z);
+        Camera.main.GetComponent<Camera_follow>().setMaxX(niveau.taille - 1);
+        TimeSpan dur = DateTime.Now - start;
+		Debug.Log ("Temps d'execution = " + dur.ToString());
+	}
+
+	public Niveau getNiveau(){
+		return niveau;
+	}
+
+	public void chargerNiveau(){
+		/*
+		 * Instanciation du sol
+		 */
+		for (int i = 0; i < niveau.taille; i++) {
+			for (int j = 0; j < niveau.hauteurBlocs [i]; j++) {
+                GameObject tmp = chooseTile(niveau.hauteurBlocs[i], j, niveau.saison);
+                Instantiate (tmp, new Vector2 (i, j), Quaternion.identity);
+			}
+		}
+	}
+
+	public void chargerJson(string _path){
 		/*
 		 * On met dans le path, le chemin du json créé aléatoirement.
 		 * Il est dans le dossier streamingAssets car c'est une sorte de pré-requis unity
 		 * On lit ensuite le fichier et on met le tout dans le string jsonString
 		*/
-		string path = Application.streamingAssetsPath + "/test.json";
+		string path = _path;
 		string jsonString = File.ReadAllText (path);
 
 		/*
 		 * On appelle la classe Niveau pour l'instanciation des objets
 		*/
-		Niveau niveau = new Niveau ();
+		niveau = new Niveau ();
 		niveau.plateformes = new List<Plateforme> ();
 		niveau.powerups = new List<PowerUp> ();
 		niveau.ennemis = new List<Ennemis> ();
@@ -92,7 +121,7 @@ public class GenerationNiveau : MonoBehaviour {
 		/*
 		 * Ennemis
 		*/
-		foreach (var item_ennemis in element_niveau["ennemis"].Children()) {
+		foreach (var item_ennemis in element_niveau["ennemies"].Children()) {
 			if (((string)item_ennemis ["type"]).Equals ("Tireur")) {
 				int x = item_ennemis ["x"].Value<int> ();
 				int y = item_ennemis ["y"].Value<int> ();
@@ -109,7 +138,7 @@ public class GenerationNiveau : MonoBehaviour {
 		/*
 		 * PowerUps
 		*/
-		foreach (var item_powerup in element_niveau["powerups"].Children()) {
+		foreach (var item_powerup in element_niveau["items"].Children()) {
 			float x, y;
 			int duree;
 			switch ((string)item_powerup ["type"]) {
@@ -146,6 +175,24 @@ public class GenerationNiveau : MonoBehaviour {
 		}
 		Debug.Log ("Liste_powerups : Fait");
 		Debug.Log (niveau.Affiche ());
+	}
+
+	private GameObject chooseTile(int h,int j,int s){
+        GameObject ret;
+		if (s == 0) {
+			if (j < h - 1) {
+				ret = Resources.Load ("sol/sol_bottom_winter") as GameObject;
+			} else {
+				ret =  Resources.Load ("sol/sol_top_winter") as GameObject;
+			}
+		} else {
+			if (j < h - 1) {
+				ret = Resources.Load ("sol/sol_bottom_summer") as GameObject;
+			} else {
+				ret = Resources.Load ("sol/sol_top_summer") as GameObject;
+			}
+		}
+        return ret;
 	}
 
 }
