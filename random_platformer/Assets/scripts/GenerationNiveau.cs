@@ -33,6 +33,10 @@ public class GenerationNiveau : MonoBehaviour {
                 Instantiate (tmp, new Vector2 (i, j), Quaternion.identity);
 			}
 		}
+
+		/*
+		 *TODO instanciation du reste du niveau 
+		 */
 	}
 
 	public void chargerJson(string _path){

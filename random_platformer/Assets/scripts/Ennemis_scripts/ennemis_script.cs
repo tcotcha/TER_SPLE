@@ -21,10 +21,6 @@ public class ennemis_script : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		direction = -1;
 		if (!isBumper) {
-			CapsuleCollider2D cc2d = GetComponent<CapsuleCollider2D> ();
-			cc2d.offset = new Vector2(0.57f,-1.4f);
-			cc2d.size = new Vector2(3.9f,5.4f);
-			niveau =  GameObject.FindGameObjectWithTag ("Handler").GetComponent<GenerationNiveau> ().getNiveau();
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 		}
 	}
@@ -34,18 +30,19 @@ public class ennemis_script : MonoBehaviour {
 		anim.SetBool("isBumper",isBumper);
 		
 		if (niveau == null) {
-			niveau =  GameObject.FindGameObjectWithTag ("Handler").GetComponent<GenerationNiveau> ().getNiveau();
+			niveau =  GameObject.Find("Handler").GetComponent<GenerationNiveau> ().getNiveau();
 		}
 
-		if (isBumper && niveau != null) {
-            chooseDir();
-		}
+
 
 		transform.localScale = new Vector2 (-1*direction * Mathf.Abs (transform.localScale.x), transform.localScale.y);
 
 	}
 
 	void FixedUpdate(){
+		if (isBumper && niveau != null) {
+			chooseDir();
+		}
 		if (isBumper) {
 			//Movement
 			rb2d.AddForce ((Vector2.right * speed) * direction);
@@ -76,28 +73,18 @@ public class ennemis_script : MonoBehaviour {
 
 	public void setBumper(bool b){
 		isBumper = b;
-		if (!isBumper) {
-			CapsuleCollider2D cc2d = GetComponent<CapsuleCollider2D> ();
-			cc2d.offset = new Vector2(0.57f,-1.4f);
-			cc2d.size = new Vector2(3.9f,5.4f);
-		}
 	}
 
     public void chooseDir() {
-        if (Mathf.Floor(transform.position.x) > 0f
-            && Mathf.Floor(transform.position.x) != niveau.taille
-            && niveau.hauteurBlocs[(int)Mathf.Floor(transform.position.x)] != niveau.hauteurBlocs[(int)Mathf.Floor(transform.position.x) + direction])
+		float tmp = transform.position.x + 0.5f;
+        if (Mathf.Floor(tmp) > 0f
+            && Mathf.Floor(tmp) != niveau.taille
+            && niveau.hauteurBlocs[(int)Mathf.Floor(tmp)] != niveau.hauteurBlocs[(int)Mathf.Floor(tmp) + direction])
         {
-            if (direction == -1
-            && (transform.position.x - Mathf.Floor(transform.position.x)) < 0.08f)
-            {
-                invDir();
-            }
-            else if (direction == 1
-           && (transform.position.x - Mathf.Floor(transform.position.x)) > 0.3f)
-            {
-                invDir();
-            } 
+			tmp += 0.5f;
+			if ((tmp - Mathf.Floor (tmp)) < 0.1f || (tmp - Mathf.Floor (tmp)) > 0.9f) {
+				invDir ();
+			}
         }
     }
 

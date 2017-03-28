@@ -50,7 +50,7 @@
      <Compile Include="Assets\scripts\Ennemis_scripts\Front.cs" />
      <Compile Include="Assets\scripts\Ennemis_scripts\ennemis_script.cs" />
      <Compile Include="Assets\scripts\Ennemis_scripts\head_script.cs" />
-     <Compile Include="Assets\scripts\Generate_floor.cs" />
+     <Compile Include="Assets\scripts\Ennemis_scripts\spear_script.cs" />
      <Compile Include="Assets\scripts\GenerationNiveau.cs" />
      <Compile Include="Assets\scripts\Level Data Description\CheckPoint.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Ennemis\Bumper.cs" />

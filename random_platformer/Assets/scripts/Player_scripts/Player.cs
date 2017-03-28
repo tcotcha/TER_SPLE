@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 
 	public float maxSpeed = 2f;
 	public float speed = 150f;
-	public float jmpHeight = 0f;
+	public float jmpHeight;
 
 	private bool grounded;//True if the player is on the ground
 
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour {
 
 		//Fast falling
 		if (rg2d.velocity.y < 0) {
-			rg2d.gravityScale = 2;
+			rg2d.gravityScale = 3;
 		} else {
 			rg2d.gravityScale = 1;
 		}
