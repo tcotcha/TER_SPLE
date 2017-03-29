@@ -45,7 +45,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102663597204749030}
   m_Solo: 0
@@ -107,7 +107,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.1253791
+  m_TransitionOffset: 0
   m_ExitTime: 0.33926135
   m_HasExitTime: 0
   m_HasFixedDuration: 0
@@ -175,6 +175,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: grounded
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: speed
+    m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102166135635617448}
   m_Solo: 0
@@ -182,7 +185,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.0036662112
+  m_TransitionOffset: 0
   m_ExitTime: 0.1610545
   m_HasExitTime: 0
   m_HasFixedDuration: 0
@@ -196,7 +199,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: player_jump
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101920690490052998}
@@ -277,7 +280,7 @@ AnimatorStateMachine:
     m_Position: {x: 168, y: 204, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102141433813109806}
-    m_Position: {x: 348, y: 39, z: 0}
+    m_Position: {x: 348, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102663597204749030}
     m_Position: {x: 420, y: 204, z: 0}

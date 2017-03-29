@@ -91,17 +91,17 @@ public class menu_interaction : MonoBehaviour {
 		switch(position){
 		case 1:
 			positionCadre.y = 42.5f;
-			PlayerPrefs.SetString("Player Level", "easy_level");
+			PlayerPrefs.SetString("Player Level", "FM_facile.JSON");
 			print (PlayerPrefs.GetString("Player Level"));
 			break;
 		case 2:
 			positionCadre.y = -42.5f;
-			PlayerPrefs.SetString("Player Level", "medium_level");
+			PlayerPrefs.SetString("Player Level", "FM_moyen.JSON");
 			print (PlayerPrefs.GetString("Player Level"));
 			break;
 		case 3:
 			positionCadre.y = -122.4f;
-			PlayerPrefs.SetString("Player Level", "hard_level");
+			PlayerPrefs.SetString("Player Level", "FM_difficile.JSON");
 			print (PlayerPrefs.GetString("Player Level"));
 			break;
 		default:

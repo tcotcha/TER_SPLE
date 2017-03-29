@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
 
 	void Start () {
 		//affiche le niveau choisis
-		print ("niveau  "+PlayerPrefs.GetString("Player Level"));
+		print ("niveau : "+PlayerPrefs.GetString("Player Level"));
 
 		//Init Component
 		rg2d = GetComponent<Rigidbody2D> ();
@@ -84,6 +84,9 @@ public class Player : MonoBehaviour {
 
 	public void setGrounded(bool g){
 		grounded = g;
+	}
+	public bool getGrounded(){
+		return grounded;
 	}
 
 	public void die(){

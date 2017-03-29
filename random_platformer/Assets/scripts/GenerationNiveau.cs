@@ -5,6 +5,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using UnityEditor;
 
 public class GenerationNiveau : MonoBehaviour {
 	private Niveau niveau;
@@ -17,6 +18,17 @@ public class GenerationNiveau : MonoBehaviour {
         Camera.main.GetComponent<Camera_follow>().setMaxX(niveau.taille - 1);
         TimeSpan dur = DateTime.Now - start;
 		Debug.Log ("Temps d'execution = " + dur.ToString());
+
+		/*
+		 * powerups
+		 */
+		niveau.powerups.ForEach (delegate(PowerUp obj) {
+			UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs/powerup.prefab", typeof(GameObject));
+			GameObject tmp = Instantiate(prefab, new Vector2 (obj.getX(), obj.getY()), Quaternion.identity) as GameObject;
+			tmp.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>("powerup/"+obj.GetType());
+			tmp.name = obj.GetType().ToString();
+		});
+
 	}
 
 	public Niveau getNiveau(){
