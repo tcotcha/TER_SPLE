@@ -11,8 +11,7 @@ public class mouvement_platform : MonoBehaviour {
 	public bool friable;
 	public static bool platformFriableGrounded;
 
-	//public GameObject g;
-	public GameObject trigger;
+	public List<GameObject> trigger;
 
 	private Vector3 posDeb;
 	private Vector3 posFin;
@@ -36,7 +35,8 @@ public class mouvement_platform : MonoBehaviour {
 		posDeb = t.localPosition;
 		posFin = tFin.localPosition;
 		posSuivante = posFin;
-
+		/*
+		 * saison
 		if(transform.name.Contains("platform_1")){
 			transform.GetChild(0).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("saison"));
 		}
@@ -49,7 +49,7 @@ public class mouvement_platform : MonoBehaviour {
 			transform.GetChild(1).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("saison")+"Mid");
 			transform.GetChild(2).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("saison")+"Right");
 		}
-
+		*/
 		if (friable) {
 			/*foreach (Transform child in transform)
 			{
@@ -59,13 +59,13 @@ public class mouvement_platform : MonoBehaviour {
 					c.transform.localScale = new Vector3 (1, 1, 1);
 				}
 			}*/
-			trigger.SetActive(true);
+			trigger.ForEach (delegate(GameObject obj) {
+				obj.SetActive (true);
+			});
 		}
 	}
 	
 	void Update () {
-		//GetComponentInChildren<Animator> ().Play ("grassFriable");
-		//anim.SetBool ("friableGrounded", platformFriableGrounded);
 		move ();
 	}
 
