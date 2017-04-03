@@ -1,0 +1,315 @@
+{
+    "difficulte": 3,
+    "saison": 0,
+    "taille": 130,
+    "hauteurBlocs": [
+        4,
+        5,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        5,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        5,
+        5,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2,
+        2,
+        2,
+        2
+    ],
+    "joueur": {
+        "nbVies": 3,
+        "hauteurSaut": 1.5,
+        "vitesse": 2,
+        "x": 0,
+        "y": 5
+    },
+    "checkpoint": {
+        "actif": false,
+        "x": 64,
+        "y": 4
+    },
+    "pieges": [
+        {
+            "longueur": 4,
+            "positionX": 11
+        },
+        {
+            "longueur": 5,
+            "positionX": 32
+        },
+        {
+            "longueur": 5,
+            "positionX": 46
+        },
+        {
+            "longueur": 4,
+            "positionX": 52
+        },
+        {
+            "longueur": 5,
+            "positionX": 78
+        },
+        {
+            "longueur": 5,
+            "positionX": 83
+        },
+        {
+            "longueur": 5,
+            "positionX": 96
+        },
+        {
+            "longueur": 5,
+            "positionX": 120
+        }
+    ],
+    "plateformes": [
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 33,
+            "y": 4.5,
+            "friable": true
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 47,
+            "y": 4.5,
+            "friable": true
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 79,
+            "y": 6.5,
+            "finX": 84,
+            "finY": 11.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 84,
+            "y": 0.5,
+            "friable": true
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 97,
+            "y": 4.5,
+            "finX": 102,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 121,
+            "y": 4.5,
+            "friable": true
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 90,
+            "y": 4.5,
+            "friable": true
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 127,
+            "y": 2.5,
+            "finX": 127,
+            "finY": 7.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 74,
+            "y": 5.5,
+            "finX": 74,
+            "finY": 5.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 45,
+            "y": 4.5,
+            "finX": 45,
+            "finY": 4.5
+        }
+    ],
+    "ennemies": [
+        {
+            "type": "Tireur",
+            "x": 61,
+            "y": 5
+        },
+        {
+            "type": "Bumper",
+            "x": 128,
+            "y": 3,
+            "direction": -1
+        },
+        {
+            "type": "Tireur",
+            "x": 114,
+            "y": 4
+        },
+        {
+            "type": "Tireur",
+            "x": 88,
+            "y": 5
+        },
+        {
+            "type": "Bumper",
+            "x": 104,
+            "y": 5,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 125,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 51,
+            "y": 5,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 23,
+            "y": 5,
+            "direction": -1
+        }
+    ],
+    "items": [
+        {
+            "type": "VieMalus",
+            "temporaire": false,
+            "x": 101,
+            "y": 5
+        }
+    ]
+}

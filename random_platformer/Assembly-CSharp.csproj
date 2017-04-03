@@ -51,7 +51,6 @@
      <Compile Include="Assets\scripts\Ennemis_scripts\ennemis_script.cs" />
      <Compile Include="Assets\scripts\Ennemis_scripts\head_script.cs" />
      <Compile Include="Assets\scripts\Ennemis_scripts\spear_script.cs" />
-     <Compile Include="Assets\scripts\Generate_floor.cs" />
      <Compile Include="Assets\scripts\GenerationNiveau.cs" />
      <Compile Include="Assets\scripts\Level Data Description\CheckPoint.cs" />
      <Compile Include="Assets\scripts\Level Data Description\Ennemis\Bumper.cs" />
@@ -95,7 +94,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/hugo/TER M1/TER_SPLE/random_platformer/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/Nairolf/Desktop/TER/TER_SPLE/random_platformer/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

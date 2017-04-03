@@ -12,12 +12,14 @@ public class Player : MonoBehaviour {
 	public float speed = 150f;
 	public float jmpHeight;
 
+	private int health;
 	private bool grounded;//True if the player is on the ground
 
 	private Rigidbody2D rg2d;
 	private Animator anim;
 
 	void Start () {
+		health = 3;
 		//affiche le niveau choisis
 		print ("niveau : "+PlayerPrefs.GetString("Player Level"));
 
@@ -90,6 +92,10 @@ public class Player : MonoBehaviour {
 	}
 
 	public void die(){
+		health -= 1;
+		if (health == 0) {
+			health = 3;
+		}
 		box.SetActive (true);
 		transform.localPosition = new Vector3 (0, 8, 0);
 		box.SetActive (false);
