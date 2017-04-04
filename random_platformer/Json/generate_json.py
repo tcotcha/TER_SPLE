@@ -209,11 +209,10 @@ nbPieges = randint(data["piege"]["min"],data["piege"]["max"])
 nbPowerUp = randint(data["power-up"]["min"],data["power-up"]["max"])
 
 #calcul du sol
-smoothness = randint(8,15)
-seed = randint(0,10000)
+smoothness = randint(5,13)
 sol = list(range(taille))
-for i in sol:
-	sol[i] = int(round(pnoise1(float(i)/smoothness,1)*3))+4
+for i in range(taille):
+	sol[i] = int(pnoise1(float(i) * smoothness / taille - 0.5 * smoothness,1)*5)+4
 
 #placement des pieges
 pieges = []
@@ -223,7 +222,7 @@ if nbPieges != 0:
 		if i == 0:
 			pos = randint(10+tmp*i,tmp*(i+1))
 		elif i == nbPieges-1 :
-			pos = randint(tmp*i,tmp*(i+1)-data["piege"]["largeurMax"]-1)
+			pos = randint(tmp*i,tmp*(i+1)-data["piege"]["largeurMax"]-5)
 		else:
 			pos = randint(tmp*i,tmp*(i+1))
 		l = randint(data["piege"]["largeurMin"],data["piege"]["largeurMax"])

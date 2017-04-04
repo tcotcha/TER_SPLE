@@ -17,7 +17,7 @@ public class GenerationNiveau : MonoBehaviour {
         GameObject.Find("mur_fin").transform.position = new Vector3(niveau.taille, transform.position.y, transform.position.z);
         Camera.main.GetComponent<Camera_follow>().setMaxX(niveau.taille - 1);
         TimeSpan dur = DateTime.Now - start;
-		Debug.Log ("Temps d'execution = " + dur.ToString());
+		Debug.Log (PlayerPrefs.GetString("Json"));
 
 
 
