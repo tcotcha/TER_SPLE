@@ -59,11 +59,6 @@ public class GenerationNiveau : MonoBehaviour {
 	}
 
 	public void chargerJson(string _path){
-		/*
-		 * On met dans le path, le chemin du json créé aléatoirement.
-		 * Il est dans le dossier streamingAssets car c'est une sorte de pré-requis unity
-		 * On lit ensuite le fichier et on met le tout dans le string jsonString
-		*/
 		string path = _path;
 		string jsonString = File.ReadAllText (path);
 
