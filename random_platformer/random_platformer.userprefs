@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\PowerUpUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Ennemis_scripts\ennemis_script.cs">
     <Files>
-      <File FileName="Assets\scripts\PowerUpManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\mouvement_platform.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Player_scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\PowerUpUI.cs" Line="28" Column="1" />
+      <File FileName="Assets\scripts\trigger_platform_friable.cs" Line="1" Column="1" />
+      <File FileName="Json\Generated\easy_6.json" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Ennemis_scripts\ennemis_script.cs" Line="22" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

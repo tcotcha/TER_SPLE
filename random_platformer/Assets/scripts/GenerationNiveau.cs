@@ -5,7 +5,9 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class GenerationNiveau : MonoBehaviour {
 	private Niveau niveau;
@@ -17,10 +19,12 @@ public class GenerationNiveau : MonoBehaviour {
         GameObject.Find("mur_fin").transform.position = new Vector3(niveau.taille, transform.position.y, transform.position.z);
         Camera.main.GetComponent<Camera_follow>().setMaxX(niveau.taille - 1);
         TimeSpan dur = DateTime.Now - start;
-		Debug.Log (PlayerPrefs.GetString("Json"));
-
-
-
+		Debug.Log ("Temps d'execution = " + dur.ToString());
+		if(niveau.saison == 0){
+			PlayerPrefs.SetString("Saison", "snow");
+		}else{
+			PlayerPrefs.SetString("Saison","grass");
+		}
 	}
 
 	public Niveau getNiveau(){
@@ -52,14 +56,24 @@ public class GenerationNiveau : MonoBehaviour {
 			tmp.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>("powerup/"+obj.GetType());
 			tmp.name = obj.GetType().ToString();
 		});
+		/*
+		 * plateformes
+		 */
+		genererPlateformes ();
 
 		/*
-		 *TODO instanciation du reste du niveau 
+		 * checkpoint 
 		 */
+		UnityEngine.Object flag = AssetDatabase.LoadAssetAtPath("Assets/prefabs/checkpoint.prefab", typeof(GameObject));
+		GameObject myCheckpoint = Instantiate(flag, new Vector2 (niveau.checkpoint.x,niveau.hauteurBlocs[(int)niveau.checkpoint.x]), Quaternion.identity) as GameObject;
+		myCheckpoint.name = "Checkpoint";
+
+
 	}
 
 	public void chargerJson(string _path){
 		string path = _path;
+		print (path);
 		string jsonString = File.ReadAllText (path);
 
 		/*
@@ -193,6 +207,32 @@ public class GenerationNiveau : MonoBehaviour {
 		}
 		Debug.Log ("Liste_powerups : Fait");
 		Debug.Log (niveau.Affiche ());
+	}
+
+	private void genererPlateformes(){
+		niveau.plateformes.ForEach (delegate(Plateforme p) {
+			UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath ("Assets/prefabs/platform_" + p.largeur + ".prefab", typeof(GameObject));
+			GameObject tmp = Instantiate (prefab, new Vector2 (p.positionX, p.positionY), Quaternion.identity) as GameObject;
+			mouvement_platform script = tmp.GetComponent<mouvement_platform>();
+			tmp.name = "platform_" + p.largeur;
+			script.x = p.positionX;
+			script.y = p.positionY;
+			try
+			{
+				if(p.getFriable())
+					script.friable = true;
+			}
+			catch(Exception e){
+				script.friable = false;
+			}
+			if (p.GetType().ToString() == "Mobile"){
+				script.fin_x = p.getPosFinX();
+				script.fin_y = p.getPosFinY();
+			}else{
+				script.fin_x = p.positionX;
+				script.fin_y = p.positionY;
+			}
+		});
 	}
 
 	private GameObject chooseTile(int h,int j,int s){

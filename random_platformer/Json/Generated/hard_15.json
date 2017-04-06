@@ -1,0 +1,288 @@
+{
+    "difficulte": 3,
+    "saison": 0,
+    "taille": 130,
+    "hauteurBlocs": [
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        4,
+        5,
+        7,
+        8,
+        8,
+        8,
+        7,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        7,
+        7,
+        5,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4
+    ],
+    "joueur": {
+        "nbVies": 3,
+        "hauteurSaut": 1.5,
+        "vitesse": 2,
+        "x": 0,
+        "y": 5
+    },
+    "checkpoint": {
+        "actif": false,
+        "x": 64,
+        "y": 4
+    },
+    "pieges": [
+        {
+            "longueur": 4,
+            "positionX": 16
+        },
+        {
+            "longueur": 3,
+            "positionX": 29
+        },
+        {
+            "longueur": 5,
+            "positionX": 40
+        },
+        {
+            "longueur": 4,
+            "positionX": 48
+        },
+        {
+            "longueur": 5,
+            "positionX": 77
+        },
+        {
+            "longueur": 5,
+            "positionX": 87
+        },
+        {
+            "longueur": 5,
+            "positionX": 96
+        },
+        {
+            "longueur": 3,
+            "positionX": 112
+        }
+    ],
+    "plateformes": [
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 41,
+            "y": 4.5,
+            "friable": true
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 78,
+            "y": 4.5,
+            "finX": 83,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 88,
+            "y": 4.5,
+            "finX": 93,
+            "finY": 9.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 97,
+            "y": 4.5,
+            "friable": true
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 28,
+            "y": 7.5,
+            "finX": 33,
+            "finY": 7.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 24,
+            "y": 7.5,
+            "friable": true
+        }
+    ],
+    "ennemies": [
+        {
+            "type": "Tireur",
+            "x": 47,
+            "y": 4
+        },
+        {
+            "type": "Bumper",
+            "x": 14,
+            "y": 5,
+            "direction": -1
+        },
+        {
+            "type": "Tireur",
+            "x": 82,
+            "y": 5
+        },
+        {
+            "type": "Tireur",
+            "x": 55,
+            "y": 5
+        },
+        {
+            "type": "Tireur",
+            "x": 107,
+            "y": 5
+        },
+        {
+            "type": "Bumper",
+            "x": 59,
+            "y": 5,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 54,
+            "y": 5,
+            "direction": -1
+        },
+        {
+            "type": "Tireur",
+            "x": 38,
+            "y": 5
+        },
+        {
+            "type": "Tireur",
+            "x": 103,
+            "y": 5
+        }
+    ],
+    "items": [
+        {
+            "type": "VieMalus",
+            "temporaire": false,
+            "x": 101,
+            "y": 5
+        }
+    ]
+}

@@ -462,7 +462,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     UNet: 1
-  cloudProjectId: 86a759b0-7593-4eae-8097-102d87059a75
-  projectName: random_platformer
-  organizationId: bogrenier
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
