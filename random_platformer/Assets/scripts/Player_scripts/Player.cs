@@ -90,9 +90,9 @@ public class Player : MonoBehaviour {
 			jumpboost.CurrentVal = 10;
 		}
 		if (powerUpReset) {
-			jumpboost.CurrentVal = 10;
-			invincibilite.CurrentVal = 10;
-			inversement.CurrentVal = 10;
+			jumpboost.Initialize();
+			invincibilite.Initialize ();
+			inversement.Initialize ();
 			setPowerUpInversementActif (false);
 			setPowerUpInvincibleActif (false);
 			setPowerUpJumpBoostActif (false);
@@ -182,6 +182,22 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void Reset(string nom) {
+		switch (nom) {
+		case "Inversement": 
+			inversement.Initialize ();
+			break;
+		case "JumpBoost": 
+			jumpboost.Initialize ();
+			break;
+		case "Invincibilite":
+			invincibilite.Initialize ();
+			break;
+		default:
+			break;
+		}
+	}
+
 	public void setJmpHeight(float jmp) {
 		this.jmpHeight = jmp;
 	}
@@ -197,7 +213,6 @@ public class Player : MonoBehaviour {
 	public int getNbVie(){
 		return nbVie;
 	}
-
 
 	public void setPowerUpInvincibleActif(bool activite) {
 		this.powerUpInvincibleActif  = activite;

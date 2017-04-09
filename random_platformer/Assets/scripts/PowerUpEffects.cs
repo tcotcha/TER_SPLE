@@ -9,6 +9,8 @@ public class PowerUpEffects : MonoBehaviour {
 	private string nomPowerUp;
 	private Player thePlayer;
 
+	private bool _triggered = false;
+
 	void Start() {
 		thePlayer = FindObjectOfType<Player> ();
 	}
@@ -28,30 +30,32 @@ public class PowerUpEffects : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
-		nomPowerUp = this.name;
-		int vie = GameObject.Find ("Player").GetComponent<Player> ().getNbVie ();
-		if (other.name.Equals ("Player")) {
-			switch (nomPowerUp) {
-			case "VieBonus":
-				GameObject.Find ("Player").GetComponent<Player> ().setNbVie (vie + 1);
-				Remove (nomPowerUp);
-				break;
-			case "VieMalus":
-				GameObject.Find ("Player").GetComponent<Player> ().setNbVie (vie - 1);
-				Remove (nomPowerUp);
-				break;
-			default:
-				break;
+		if (!_triggered) {
+			_triggered = true;
+			nomPowerUp = this.name;
+			if (other.name.Equals ("Player")) {
+				switch (nomPowerUp) {
+				case "VieBonus":
+					thePlayer.setNbVie (thePlayer.getNbVie () + 1);
+					Remove (nomPowerUp);
+					break;
+				case "VieMalus":
+					thePlayer.setNbVie (thePlayer.getNbVie () - 1);
+					Remove (nomPowerUp);
+					break;
+				default:
+					OnPickUp (nomPowerUp);
+					break;
+				}
+				Disable ();
 			}
-			OnPickUp (nomPowerUp);
-			Disable ();
 		}
+		_triggered = false;
 	}
 
 	public void OnBeforeDelay(string nomPowerUp) {		
 		switch (nomPowerUp) {
 		case "JumpBoost":
-		//	GameObject.Find ("Player").GetComponent<Player> ().setJmpHeight (9);
 			thePlayer.setPowerUpJumpBoostActif (true);
 			break;
 		case "Inversement":
@@ -81,7 +85,22 @@ public class PowerUpEffects : MonoBehaviour {
 		}
 		Remove (nomPowerUp);
 	}
-		
+
+	void ProcessPowerUpWhile(string nom_pw, float temps) {
+		switch (nom_pw) {
+		case "JumpBoost":
+			//while(
+			break;
+		case "Inversement":
+			thePlayer.setPowerUpInversementActif (false);
+			break;
+		case "Invincibilite":
+			thePlayer.setPowerUpInvincibleActif (false);
+			break;
+		default:
+			break;
+		}
+	}
 
 	public IEnumerator ProcessPowerUp(string nom_pw, float temps) {
 		yield return new WaitForSeconds (temps);
