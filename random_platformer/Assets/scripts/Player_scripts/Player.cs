@@ -43,8 +43,7 @@ public class Player : MonoBehaviour {
 	void Start () {
 		rg2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-
-		transform.localPosition = new Vector3 (0, 9, 0);
+		box = GameObject.Find ("boxRestart");
 	}
 
 	void Update(){

@@ -45,7 +45,8 @@ public class GenerationNiveau : MonoBehaviour {
 		/*
 		 * Player
 		 */
-
+		GameObject.Find("Player").transform.position = new Vector2 (0f, (float)niveau.hauteurBlocs [0] + 1.5f);
+		GameObject.Find ("boxRestart").transform.position = new Vector2(GameObject.Find ("boxRestart").transform.position.x,niveau.hauteurBlocs [0] + 5f);
 
 		/*
 		 * powerups
@@ -62,7 +63,16 @@ public class GenerationNiveau : MonoBehaviour {
 		genererPlateformes ();
 
 		/*
-		 * checkpoint 
+		 * Ennemis
+		 */
+		foreach(var obj in niveau.ennemis){
+			bool isBumper = (obj.GetType() == typeof(Bumper));
+			GameObject tmp = Resources.Load("ennemis") as GameObject;
+			(Instantiate(tmp,new Vector2(obj.x+0.5f,obj.y-0.9f),Quaternion.identity)).GetComponent<ennemis_script>().init(isBumper,niveau);
+		}
+
+		/*
+		 *TODO instanciation du reste du niveau 
 		 */
 		UnityEngine.Object flag = AssetDatabase.LoadAssetAtPath("Assets/prefabs/checkpoint.prefab", typeof(GameObject));
 		GameObject myCheckpoint = Instantiate(flag, new Vector2 (niveau.checkpoint.x,niveau.hauteurBlocs[(int)niveau.checkpoint.x]), Quaternion.identity) as GameObject;

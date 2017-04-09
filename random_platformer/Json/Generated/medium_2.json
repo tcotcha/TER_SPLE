@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
     "difficulte": 1,
     "saison": 1,
     "taille": 140,
@@ -43,6 +44,13 @@
         4,
         4,
         4,
+=======
+    "difficulte": 2,
+    "saison": 0,
+    "taille": 148,
+    "hauteurBlocs": [
+        4,
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -64,6 +72,29 @@
         4,
         4,
         4,
+<<<<<<< Updated upstream
+=======
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -71,6 +102,13 @@
         4,
         4,
         4,
+<<<<<<< Updated upstream
+=======
+        5,
+        0,
+        0,
+        0,
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -79,10 +117,22 @@
         3,
         3,
         3,
+<<<<<<< Updated upstream
         3,
         2,
         2,
         3,
+=======
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+>>>>>>> Stashed changes
         3,
         3,
         3,
@@ -91,16 +141,36 @@
         4,
         5,
         5,
+<<<<<<< Updated upstream
         5,
         5,
+=======
+        6,
+        6,
+        6,
+        7,
+        7,
+        0,
+        0,
+        0,
+        0,
+        7,
+        7,
+        7,
+        7,
+        6,
+>>>>>>> Stashed changes
         6,
         6,
         5,
         5,
+<<<<<<< Updated upstream
         5,
         5,
         4,
         4,
+=======
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -109,6 +179,10 @@
         0,
         0,
         0,
+<<<<<<< Updated upstream
+=======
+        0,
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -124,6 +198,11 @@
         4,
         4,
         4,
+<<<<<<< Updated upstream
+=======
+        0,
+        0,
+        0,
         4,
         4,
         4,
@@ -134,11 +213,26 @@
         4,
         4,
         4,
+        4,
+>>>>>>> Stashed changes
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+<<<<<<< Updated upstream
         3,
         3,
         3,
         3,
         3,
+=======
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -153,18 +247,44 @@
     },
     "checkpoint": {
         "actif": false,
+<<<<<<< Updated upstream
         "x": 69,
+=======
+        "x": 73,
+>>>>>>> Stashed changes
         "y": 5
     },
     "pieges": [
         {
+<<<<<<< Updated upstream
             "longueur": 4,
             "positionX": 102
+=======
+            "longueur": 5,
+            "positionX": 23
+        },
+        {
+            "longueur": 3,
+            "positionX": 50
+        },
+        {
+            "longueur": 4,
+            "positionX": 83
+        },
+        {
+            "longueur": 5,
+            "positionX": 100
+        },
+        {
+            "longueur": 3,
+            "positionX": 120
+>>>>>>> Stashed changes
         }
     ],
     "plateformes": [
         {
             "type": "Immobile",
+<<<<<<< Updated upstream
             "largeur": 3,
             "x": 127,
             "y": 4.5,
@@ -182,10 +302,22 @@
             "type": "Immobile",
             "largeur": 2,
             "x": 65,
+=======
+            "largeur": 2,
+            "x": 24,
+            "y": 3.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 101,
+>>>>>>> Stashed changes
             "y": 4.5,
             "friable": false
         },
         {
+<<<<<<< Updated upstream
             "type": "Immobile",
             "largeur": 1,
             "x": 32,
@@ -220,10 +352,51 @@
             "y": 4.5,
             "finX": 39,
             "finY": 9.5
+=======
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 39,
+            "y": 3.5,
+            "finX": 39,
+            "finY": 8.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 89,
+            "y": 7.5,
+            "finX": 94,
+            "finY": 7.5
         },
         {
             "type": "Mobile",
             "largeur": 3,
+            "x": 56,
+            "y": 4.5,
+            "finX": 56,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 82,
+            "y": 7.5,
+            "finX": 82,
+            "finY": 7.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 18,
+            "y": 4.5,
+            "finX": 18,
+            "finY": 4.5
+>>>>>>> Stashed changes
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+<<<<<<< Updated upstream
             "x": 81,
             "y": 3.5,
             "finX": 81,
@@ -235,18 +408,37 @@
             "x": 30,
             "y": 4.5,
             "finX": 30,
+=======
+            "x": 125,
+            "y": 4.5,
+            "finX": 125,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 130,
+            "y": 4.5,
+            "finX": 130,
+>>>>>>> Stashed changes
             "finY": 4.5
         },
         {
             "type": "Immobile",
+<<<<<<< Updated upstream
             "largeur": 2,
             "x": 16,
+=======
+            "largeur": 1,
+            "x": 13,
+>>>>>>> Stashed changes
             "y": 4.5,
             "friable": false
         },
         {
             "type": "Immobile",
             "largeur": 1,
+<<<<<<< Updated upstream
             "x": 132,
             "y": 3.5,
             "friable": false
@@ -302,6 +494,44 @@
         {
             "type": "Bumper",
             "x": 33,
+=======
+            "x": 28,
+            "y": 2.5,
+            "friable": true
+        }
+    ],
+    "ennemies": [
+        {
+            "type": "Tireur",
+            "x": 123,
+            "y": 5
+        },
+        {
+            "type": "Tireur",
+            "x": 37,
+            "y": 3
+        },
+        {
+            "type": "Tireur",
+            "x": 28,
+            "y": 3
+        },
+        {
+            "type": "Bumper",
+            "x": 65,
+            "y": 3,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 87,
+            "y": 8,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 53,
+>>>>>>> Stashed changes
             "y": 5,
             "direction": -1
         }
@@ -310,6 +540,7 @@
         {
             "type": "VieMalus",
             "temporaire": false,
+<<<<<<< Updated upstream
             "x": 12,
             "y": 5
         },
@@ -319,10 +550,15 @@
             "x": 24,
             "y": 5,
             "duree": 10
+=======
+            "x": 37,
+            "y": 3
+>>>>>>> Stashed changes
         },
         {
             "type": "Inversement",
             "temporaire": true,
+<<<<<<< Updated upstream
             "x": 27,
             "y": 4,
             "duree": 10
@@ -337,6 +573,9 @@
             "type": "Invincibilite",
             "temporaire": true,
             "x": 127,
+=======
+            "x": 141,
+>>>>>>> Stashed changes
             "y": 5,
             "duree": 10
         }

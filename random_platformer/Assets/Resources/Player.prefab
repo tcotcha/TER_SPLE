@@ -162,10 +162,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538571b1bc34e04baaa73a4f88af08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  box: {fileID: 0}
+  box: {fileID: 1224838511075634, guid: d1f743d990a49ca4c8aa3cbdf88db663, type: 2}
   maxSpeed: 1.5
   speed: 100
   jmpHeight: 6
+  inversement:
+    pwUI: {fileID: 0}
+  jumpboost:
+    pwUI: {fileID: 0}
+  invincibilite:
+    pwUI: {fileID: 0}
+  Image_nbvie: {fileID: 0}
 --- !u!212 &212421340669055380
 SpriteRenderer:
   m_ObjectHideFlags: 1

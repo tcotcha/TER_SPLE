@@ -1,5 +1,6 @@
 {
     "difficulte": 1,
+<<<<<<< Updated upstream
     "saison": 1,
     "taille": 140,
     "hauteurBlocs": [
@@ -30,6 +31,106 @@
         4,
         4,
         4,
+=======
+    "saison": 0,
+    "taille": 140,
+    "hauteurBlocs": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        7,
+        6,
+        6,
+        5,
+>>>>>>> Stashed changes
+        4,
+        4,
+        4,
+        4,
+        4,
+<<<<<<< Updated upstream
+=======
+        0,
+        0,
+        0,
+        0,
+>>>>>>> Stashed changes
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+<<<<<<< Updated upstream
+=======
+        3,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        3,
+>>>>>>> Stashed changes
+        4,
+        4,
+        4,
+        4,
+<<<<<<< Updated upstream
+        4,
+        4,
+        4,
+        4,
+=======
+        5,
+        5,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        5,
+        5,
+        6,
+        7,
+        7,
+        8,
+        7,
+        0,
+        0,
+        0,
+        5,
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -50,32 +151,7 @@
         4,
         4,
         4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
+<<<<<<< Updated upstream
         3,
         3,
         3,
@@ -99,6 +175,11 @@
         5,
         5,
         5,
+=======
+        4,
+        4,
+        4,
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -109,6 +190,10 @@
         0,
         0,
         0,
+<<<<<<< Updated upstream
+=======
+        0,
+>>>>>>> Stashed changes
         4,
         4,
         4,
@@ -132,6 +217,7 @@
         4,
         4,
         4,
+<<<<<<< Updated upstream
         4,
         4,
         3,
@@ -142,6 +228,8 @@
         4,
         4,
         4,
+=======
+>>>>>>> Stashed changes
         4
     ],
     "joueur": {
@@ -149,21 +237,46 @@
         "hauteurSaut": 1.5,
         "vitesse": 2,
         "x": 0,
+<<<<<<< Updated upstream
         "y": 5
+=======
+        "y": 3
+>>>>>>> Stashed changes
     },
     "checkpoint": {
         "actif": false,
         "x": 69,
+<<<<<<< Updated upstream
         "y": 5
+=======
+        "y": 4
+>>>>>>> Stashed changes
     },
     "pieges": [
         {
             "longueur": 4,
+<<<<<<< Updated upstream
             "positionX": 102
+=======
+            "positionX": 26
+        },
+        {
+            "longueur": 4,
+            "positionX": 46
+        },
+        {
+            "longueur": 3,
+            "positionX": 78
+        },
+        {
+            "longueur": 5,
+            "positionX": 111
+>>>>>>> Stashed changes
         }
     ],
     "plateformes": [
         {
+<<<<<<< Updated upstream
             "type": "Immobile",
             "largeur": 3,
             "x": 127,
@@ -188,11 +301,32 @@
         {
             "type": "Immobile",
             "largeur": 1,
+=======
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 112,
+            "y": 4.5,
+            "finX": 112,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 133,
+            "y": 4.5,
+            "finX": 138,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+>>>>>>> Stashed changes
             "x": 32,
             "y": 4.5,
             "friable": false
         },
         {
+<<<<<<< Updated upstream
             "type": "Immobile",
             "largeur": 1,
             "x": 71,
@@ -203,27 +337,54 @@
             "type": "Immobile",
             "largeur": 2,
             "x": 37,
+=======
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 84,
+            "y": 4.5,
+            "finX": 84,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 60,
+>>>>>>> Stashed changes
             "y": 4.5,
             "friable": false
         },
         {
             "type": "Immobile",
+<<<<<<< Updated upstream
             "largeur": 3,
             "x": 40,
+=======
+            "largeur": 2,
+            "x": 30,
+>>>>>>> Stashed changes
             "y": 4.5,
             "friable": false
         },
         {
             "type": "Mobile",
+<<<<<<< Updated upstream
             "largeur": 3,
             "x": 34,
             "y": 4.5,
             "finX": 39,
             "finY": 9.5
+=======
+            "largeur": 2,
+            "x": 109,
+            "y": 4.5,
+            "finX": 109,
+            "finY": 4.5
+>>>>>>> Stashed changes
         },
         {
             "type": "Mobile",
             "largeur": 3,
+<<<<<<< Updated upstream
             "x": 81,
             "y": 3.5,
             "finX": 81,
@@ -235,17 +396,37 @@
             "x": 30,
             "y": 4.5,
             "finX": 30,
+=======
+            "x": 21,
+            "y": 4.5,
+            "finX": 26,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 37,
+            "y": 4.5,
+            "finX": 42,
+>>>>>>> Stashed changes
             "finY": 4.5
         },
         {
             "type": "Immobile",
+<<<<<<< Updated upstream
             "largeur": 2,
             "x": 16,
             "y": 4.5,
+=======
+            "largeur": 3,
+            "x": 76,
+            "y": 8.5,
+>>>>>>> Stashed changes
             "friable": false
         },
         {
             "type": "Immobile",
+<<<<<<< Updated upstream
             "largeur": 1,
             "x": 132,
             "y": 3.5,
@@ -257,17 +438,38 @@
             "x": 134,
             "y": 3.5,
             "friable": false
+=======
+            "largeur": 3,
+            "x": 75,
+            "y": 7.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 50,
+            "y": 2.5,
+            "finX": 55,
+            "finY": 7.5
+>>>>>>> Stashed changes
         },
         {
             "type": "Mobile",
             "largeur": 1,
+<<<<<<< Updated upstream
             "x": 106,
             "y": 4.5,
             "finX": 111,
+=======
+            "x": 30,
+            "y": 4.5,
+            "finX": 30,
+>>>>>>> Stashed changes
             "finY": 4.5
         },
         {
             "type": "Mobile",
+<<<<<<< Updated upstream
             "largeur": 1,
             "x": 33,
             "y": 4.5,
@@ -279,10 +481,31 @@
             "largeur": 1,
             "x": 89,
             "y": 5.5,
+=======
+            "largeur": 2,
+            "x": 30,
+            "y": 4.5,
+            "finX": 30,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 33,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 132,
+            "y": 4.5,
+>>>>>>> Stashed changes
             "friable": false
         },
         {
             "type": "Mobile",
+<<<<<<< Updated upstream
             "largeur": 1,
             "x": 10,
             "y": 5.5,
@@ -296,18 +519,57 @@
             "y": 4.5,
             "finX": 135,
             "finY": 4.5
+=======
+            "largeur": 3,
+            "x": 59,
+            "y": 4.5,
+            "finX": 64,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 10,
+            "y": 6.5,
+            "finX": 10,
+            "finY": 6.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 126,
+            "y": 4.5,
+            "friable": false
+>>>>>>> Stashed changes
         }
     ],
     "ennemies": [
         {
+<<<<<<< Updated upstream
             "type": "Bumper",
             "x": 33,
             "y": 5,
+=======
+            "type": "Tireur",
+            "x": 50,
+            "y": 3
+        },
+        {
+            "type": "Tireur",
+            "x": 102,
+            "y": 5
+        },
+        {
+            "type": "Bumper",
+            "x": 18,
+            "y": 7,
+>>>>>>> Stashed changes
             "direction": -1
         }
     ],
     "items": [
         {
+<<<<<<< Updated upstream
             "type": "Invincibilite",
             "temporaire": true,
             "x": 12,
@@ -327,10 +589,17 @@
             "x": 81,
             "y": 4,
             "duree": 10
+=======
+            "type": "VieBonus",
+            "temporaire": false,
+            "x": 107,
+            "y": 5
+>>>>>>> Stashed changes
         },
         {
             "type": "VieBonus",
             "temporaire": false,
+<<<<<<< Updated upstream
             "x": 40,
             "y": 5
         },
@@ -340,6 +609,16 @@
             "x": 127,
             "y": 5,
             "duree": 10
+=======
+            "x": 96,
+            "y": 5
+        },
+        {
+            "type": "VieBonus",
+            "temporaire": false,
+            "x": 35,
+            "y": 5
+>>>>>>> Stashed changes
         }
     ]
 }

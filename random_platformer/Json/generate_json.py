@@ -260,7 +260,7 @@ joueur = Joueur(0,sol[0]+1)
 #Platforms creation
 plateformes = []
 for i in pieges:
-	if i.longueur == data["piege"]["largeurMax"]:
+	if i.longueur >= data["piege"]["largeurMax"]-1:
 		mob = randint(0,1)
 		x = i.positionX+1
 		y = sol[i.positionX-1]+0.5

@@ -21,7 +21,7 @@ public class ennemis_script : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		direction = -1;
 		if (!isBumper) {
-            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+			rb2d.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
 		}
 	}
 
@@ -76,7 +76,7 @@ public class ennemis_script : MonoBehaviour {
 	}
 
     public void chooseDir() {
-		float tmp = transform.position.x + 0.5f;
+		float tmp = transform.position.x;
         if (Mathf.Floor(tmp) > 0f
             && Mathf.Floor(tmp) != niveau.taille
             && niveau.hauteurBlocs[(int)Mathf.Floor(tmp)] != niveau.hauteurBlocs[(int)Mathf.Floor(tmp) + direction])
