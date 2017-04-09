@@ -7,17 +7,15 @@ public class PowerUpEffects : MonoBehaviour {
 
 	private int tempsEffet = 10;
 	private string nomPowerUp;
-	private PowerUpManager powerUpManager;
 	private Player thePlayer;
 
 	void Start() {
-		powerUpManager = FindObjectOfType<PowerUpManager> ();
 		thePlayer = FindObjectOfType<Player> ();
 	}
 
 	public void OnPickUp(string nom_pw) {
 		OnBeforeDelay (nom_pw);
-		StartCoroutine(powerUpManager.ProcessPowerUp(nom_pw,tempsEffet));
+		StartCoroutine(ProcessPowerUp(nom_pw,tempsEffet));
 	}
 
 	private void Disable() {
@@ -31,15 +29,15 @@ public class PowerUpEffects : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D other) {
 		nomPowerUp = this.name;
-		int nbVie = GameObject.Find ("Player").GetComponent<Player> ().getNbVie ();
+		int vie = GameObject.Find ("Player").GetComponent<Player> ().getNbVie ();
 		if (other.name.Equals ("Player")) {
 			switch (nomPowerUp) {
 			case "VieBonus":
-				GameObject.Find ("Player").GetComponent<Player> ().setNbVie (nbVie + 1);
+				GameObject.Find ("Player").GetComponent<Player> ().setNbVie (vie + 1);
 				Remove (nomPowerUp);
 				break;
 			case "VieMalus":
-				GameObject.Find ("Player").GetComponent<Player> ().setNbVie (nbVie - 1);
+				GameObject.Find ("Player").GetComponent<Player> ().setNbVie (vie - 1);
 				Remove (nomPowerUp);
 				break;
 			default:
@@ -53,13 +51,14 @@ public class PowerUpEffects : MonoBehaviour {
 	public void OnBeforeDelay(string nomPowerUp) {		
 		switch (nomPowerUp) {
 		case "JumpBoost":
-			GameObject.Find ("Player").GetComponent<Player> ().setJmpHeight (9);
+		//	GameObject.Find ("Player").GetComponent<Player> ().setJmpHeight (9);
+			thePlayer.setPowerUpJumpBoostActif (true);
 			break;
 		case "Inversement":
-			thePlayer.powerUpInversementActif = true;
+			thePlayer.setPowerUpInversementActif (true);
 			break;
 		case "Invincibilite":
-			thePlayer.powerUpInvincibleActif = true;
+			thePlayer.setPowerUpInvincibleActif (true);
 			break;
 		default:
 			break;
@@ -69,19 +68,24 @@ public class PowerUpEffects : MonoBehaviour {
 	public void OnAfterDelay(string nomPowerUp) {
 		switch (nomPowerUp) {
 		case "JumpBoost":
-			GameObject.Find ("Player").GetComponent<Player> ().setJmpHeight (7);
+			thePlayer.setPowerUpJumpBoostActif (false);
 			break;
 		case "Inversement":
-			thePlayer.powerUpInversementActif = false;
+			thePlayer.setPowerUpInversementActif (false);
 			break;
 		case "Invincibilite":
-			thePlayer.powerUpInvincibleActif = false;
+			thePlayer.setPowerUpInvincibleActif (false);
 			break;
 		default:
 			break;
 		}
 		Remove (nomPowerUp);
 	}
+		
 
+	public IEnumerator ProcessPowerUp(string nom_pw, float temps) {
+		yield return new WaitForSeconds (temps);
+		OnAfterDelay (nom_pw);
+	}
 }
 

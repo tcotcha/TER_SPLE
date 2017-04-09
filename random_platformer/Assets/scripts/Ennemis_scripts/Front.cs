@@ -6,7 +6,7 @@ public class Front : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D trigger){
 		if (trigger.gameObject.tag == "Player"){
-			trigger.gameObject.GetComponent<Player>().die();
+			trigger.gameObject.GetComponent<Player>().die("Front");
 		}
 	}
 }

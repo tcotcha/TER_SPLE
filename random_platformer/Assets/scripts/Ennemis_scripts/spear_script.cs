@@ -43,7 +43,7 @@ public class spear_script : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<Player>().die();
+            other.GetComponent<Player>().die("spear_script");
             Destroy(gameObject);
         }
         else if(other.gameObject.tag == "Ground") {

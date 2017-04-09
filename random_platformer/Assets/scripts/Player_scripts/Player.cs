@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
@@ -14,16 +15,32 @@ public class Player : MonoBehaviour {
 	private int nbVie = 3;
 
 	private bool grounded;//True if the player is on the ground
-	public bool powerUpReset;
-	public bool powerUpInvincibleActif = false;
-	public bool powerUpInversementActif = false;
+	private bool powerUpReset;
+	private bool powerUpInvincibleActif = false;
+	private bool powerUpInversementActif = false;
+	private bool powerUpJumpBoostActif = false;
 
 	private Rigidbody2D rg2d;
 	private Animator anim;
 
-	void Start () {
-		//health = 3;
+	[SerializeField]
+	private Stat inversement;
+	[SerializeField]
+	private Stat jumpboost;
+	[SerializeField]
+	private Stat invincibilite;
+	[SerializeField]
+	private Image Image_nbvie;
 
+	private float h;
+
+	void Awake() {
+		inversement.Initialize ();
+		jumpboost.Initialize ();
+		invincibilite.Initialize ();
+	}
+	
+	void Start () {
 		rg2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 
@@ -42,6 +59,63 @@ public class Player : MonoBehaviour {
 		//Revenir au menu en appuyant sur "echap"
 		if (Input.GetKeyDown (KeyCode.Escape))
 			SceneManager.LoadScene("menu");
+
+		CheckPowerUpActif ();
+		CheckVieEtUpdateImage ();
+		CheckDirection ();
+		CheckSaut ();
+	}
+
+	void CheckVieEtUpdateImage() {
+		if (nbVie <= 0) { // Si le joueur meurt, alors on le redirige sur le main menu, mais a l'avenir faudra faire autre chose
+			SceneManager.LoadScene("menu");
+		}
+		Image_nbvie.sprite = Resources.Load<Sprite> ("Numero/hud_" + getNbVie ());
+	}
+
+	void CheckPowerUpActif () {
+		if (powerUpInversementActif && !powerUpReset) {
+			inversement.CurrentVal -= Time.deltaTime;
+		} else {
+			inversement.CurrentVal = 10;
+		}
+		if (powerUpInvincibleActif && !powerUpReset) {
+			invincibilite.CurrentVal -= Time.deltaTime;
+		} else {
+			invincibilite.CurrentVal = 10;
+		}
+		if (powerUpJumpBoostActif && !powerUpReset) {
+			jumpboost.CurrentVal -= Time.deltaTime;
+		} else {
+			jumpboost.CurrentVal = 10;
+		}
+		if (powerUpReset) {
+			jumpboost.CurrentVal = 10;
+			invincibilite.CurrentVal = 10;
+			inversement.CurrentVal = 10;
+			setPowerUpInversementActif (false);
+			setPowerUpInvincibleActif (false);
+			setPowerUpJumpBoostActif (false);
+			powerUpReset = false;
+		}
+
+	}
+
+	// Met a jour le sens directionnel du joueur, si le powerUp Inversement est actif, alors il change le sens
+	void CheckDirection() {
+		//Get Input
+		h = Input.GetAxis ("Horizontal");
+		if (powerUpInversementActif) {
+			h = h * (-1);
+		}
+	}
+
+	void CheckSaut() {
+		if (powerUpJumpBoostActif) {
+			setJmpHeight (9);
+		} else {
+			setJmpHeight (7);
+		}
 	}
 
 	void FixedUpdate () {
@@ -53,14 +127,6 @@ public class Player : MonoBehaviour {
         }else { 
             friction = new Vector3(rg2d.velocity.x * 0.95f, rg2d.velocity.y, 0.0f);
         }
-
-		//Get Input
-		float h = Input.GetAxis ("Horizontal");
-
-		if (powerUpInversementActif) {
-			h = h * (-1);
-		}
-
 
 		//Adding Friction
 		if (grounded) {
@@ -98,13 +164,20 @@ public class Player : MonoBehaviour {
 		return grounded;
 	}
 
-	public void die(){
+	public void die(string mort){
 		if (!powerUpInvincibleActif) {
 			box.SetActive (true);
-			transform.localPosition = new Vector3 (0, 9, 0);
+			transform.localPosition = new Vector3 (0, 8, 0);
 			box.SetActive (false);
 			GetComponentInChildren<GroundCheck> ().setNb (0);
 
+			setNbVie (getNbVie () - 1);
+			powerUpReset = true;
+		} else if (mort.Equals("trigger_sol")) {
+			box.SetActive (true);
+			transform.localPosition = new Vector3 (0, 8, 0);
+			box.SetActive (false);
+			GetComponentInChildren<GroundCheck> ().setNb (0);
 			powerUpReset = true;
 		}
 	}
@@ -123,5 +196,16 @@ public class Player : MonoBehaviour {
 
 	public int getNbVie(){
 		return nbVie;
+	}
+
+
+	public void setPowerUpInvincibleActif(bool activite) {
+		this.powerUpInvincibleActif  = activite;
+	}
+	public void setPowerUpInversementActif(bool activite) {
+		this.powerUpInversementActif  = activite;
+	}
+	public void setPowerUpJumpBoostActif(bool activite) {
+		this.powerUpJumpBoostActif  = activite;
 	}
 }
