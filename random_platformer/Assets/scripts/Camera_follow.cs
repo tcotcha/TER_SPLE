@@ -26,9 +26,9 @@ public class Camera_follow : MonoBehaviour {
 			float _x = Mathf.SmoothDamp (transform.position.x, player.transform.position.x, ref velocity.x, smoothTimeX);
 			float _y = Mathf.SmoothDamp (transform.position.y, player.transform.position.y, ref velocity.y, smoothTimeY);
 
-			float minY = -0.5f + height / 2f;
-			float minX = -0.5f + width / 2f;
-			float max_X = (maxX + 0.5f) - (width / 2f);
+			float minY = height / 2f;
+			float minX = width / 2f;
+			float max_X = maxX - (width / 2f);
 			transform.position = new Vector3 (Mathf.Clamp (_x, minX, max_X), Mathf.Clamp (_y, minY, 100), transform.position.z);
 		} else {
 			player = GameObject.FindGameObjectWithTag ("Player");

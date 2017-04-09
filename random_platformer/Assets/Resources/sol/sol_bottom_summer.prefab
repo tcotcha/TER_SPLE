@@ -52,9 +52,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: 14931af9bbe467b4f8ad03d0848969c2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5, y: -0.5}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.85}
 --- !u!212 &212621946586884788
 SpriteRenderer:
   m_ObjectHideFlags: 1

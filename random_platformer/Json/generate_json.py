@@ -318,9 +318,9 @@ for i in ennemieX:
 			i+=1
 	tir = randint(0,1)
 	if tir == 0:
-		ennemis.append(Bumper(i,sol[i]+1))
+		ennemis.append(Bumper(i,sol[i]))
 	else:
-		ennemis.append(Tireur(i,sol[i]+1))
+		ennemis.append(Tireur(i,sol[i]))
 
 #Items creation
 items = []

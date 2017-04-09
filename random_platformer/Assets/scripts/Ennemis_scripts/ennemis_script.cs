@@ -77,15 +77,20 @@ public class ennemis_script : MonoBehaviour {
 
     public void chooseDir() {
 		float tmp = transform.position.x;
-        if (Mathf.Floor(tmp) > 0f
-            && Mathf.Floor(tmp) != niveau.taille
-            && niveau.hauteurBlocs[(int)Mathf.Floor(tmp)] != niveau.hauteurBlocs[(int)Mathf.Floor(tmp) + direction])
-        {
-			tmp += 0.5f;
-			if ((tmp - Mathf.Floor (tmp)) < 0.1f || (tmp - Mathf.Floor (tmp)) > 0.9f) {
+
+		if (tmp < 0.3f && direction == -1) {
+			invDir ();
+		} else if (tmp > niveau.taille - 1 && direction == 1) {
+			if (tmp - Mathf.Floor (tmp) > 0.8) {
 				invDir ();
 			}
-        }
+		} else if (tmp < niveau.taille && niveau.hauteurBlocs [Mathf.FloorToInt (tmp)] != niveau.hauteurBlocs [Mathf.FloorToInt (tmp) + direction]) {
+			if(direction == -1 && tmp - Mathf.Floor (tmp) < 0.3f){
+				invDir ();
+			}else if(direction == 1 && tmp - Mathf.Floor (tmp) > 0.8f){
+
+			}
+		}
     }
 
     public void shoot() {
