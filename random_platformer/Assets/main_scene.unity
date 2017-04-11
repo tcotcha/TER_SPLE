@@ -1439,6 +1439,11 @@ Prefab:
       propertyPath: Image_nbvie
       value: 
       objectReference: {fileID: 242657404}
+    - target: {fileID: 212421340669055380, guid: 4263f38df090ae64a8f20c87fe62119e,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4263f38df090ae64a8f20c87fe62119e, type: 2}
   m_IsPrefabParent: 0
