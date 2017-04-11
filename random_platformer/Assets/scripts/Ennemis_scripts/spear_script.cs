@@ -10,11 +10,14 @@ public class spear_script : MonoBehaviour {
     private float maxSpeed = 1.5f;
     private int direction;
 
+	private float xStart;
+
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         var rotationVector = transform.rotation.eulerAngles;
         rotationVector.z *= -1 * direction;
         transform.rotation = Quaternion.Euler(rotationVector);
+		xStart = transform.position.x;
     }
 	
 	
@@ -33,6 +36,10 @@ public class spear_script : MonoBehaviour {
         {
             rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
         }
+
+		if (Mathf.Abs (transform.position.x - xStart) > 10) {
+			Destroy (gameObject);
+		}
     }
 
     public void init(int d) {

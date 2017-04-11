@@ -1,0 +1,317 @@
+{
+    "difficulte": 3,
+    "saison": 1,
+    "taille": 126,
+    "hauteurBlocs": [
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+    ],
+    "joueur": {
+        "nbVies": 3,
+        "hauteurSaut": 1.5,
+        "vitesse": 2,
+        "x": 0,
+        "y": 3
+    },
+    "checkpoint": {
+        "actif": false,
+        "x": 62,
+        "y": 4
+    },
+    "pieges": [
+        {
+            "longueur": 4,
+            "positionX": 11
+        },
+        {
+            "longueur": 5,
+            "positionX": 12
+        },
+        {
+            "longueur": 4,
+            "positionX": 33
+        },
+        {
+            "longueur": 4,
+            "positionX": 39
+        },
+        {
+            "longueur": 4,
+            "positionX": 57
+        },
+        {
+            "longueur": 4,
+            "positionX": 71
+        },
+        {
+            "longueur": 3,
+            "positionX": 83
+        },
+        {
+            "longueur": 5,
+            "positionX": 86
+        },
+        {
+            "longueur": 5,
+            "positionX": 106
+        },
+        {
+            "longueur": 3,
+            "positionX": 108
+        }
+    ],
+    "plateformes": [
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 12,
+            "y": 7.5,
+            "finX": 17,
+            "finY": 7.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 13,
+            "y": 0.5,
+            "friable": true
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 34,
+            "y": 4.5,
+            "finX": 39,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 40,
+            "y": 4.5,
+            "finX": 40,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 58,
+            "y": 3.5,
+            "finX": 63,
+            "finY": 3.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 72,
+            "y": 7.5,
+            "finX": 72,
+            "finY": 12.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 87,
+            "y": 0.5,
+            "friable": true
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 107,
+            "y": 4.5,
+            "friable": true
+        }
+    ],
+    "ennemies": [
+        {
+            "type": "Tireur",
+            "x": 70,
+            "y": 7
+        },
+        {
+            "type": "Bumper",
+            "x": 124,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 91,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 75,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Tireur",
+            "x": 91,
+            "y": 4
+        },
+        {
+            "type": "Bumper",
+            "x": 111,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 29,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Bumper",
+            "x": 24,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Tireur",
+            "x": 81,
+            "y": 4
+        },
+        {
+            "type": "Tireur",
+            "x": 114,
+            "y": 4
+        }
+    ],
+    "items": [
+        {
+            "type": "JumpBoost",
+            "temporaire": true,
+            "x": 22,
+            "y": 5,
+            "duree": 10
+        }
+    ]
+}

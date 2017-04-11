@@ -88,7 +88,7 @@ public class ennemis_script : MonoBehaviour {
 			if(direction == -1 && tmp - Mathf.Floor (tmp) < 0.3f){
 				invDir ();
 			}else if(direction == 1 && tmp - Mathf.Floor (tmp) > 0.8f){
-
+				invDir ();
 			}
 		}
     }

@@ -68,14 +68,14 @@ public class GenerationNiveau : MonoBehaviour {
 		foreach(var obj in niveau.ennemis){
 			bool isBumper = (obj.GetType() == typeof(Bumper));
 			GameObject tmp = Resources.Load("ennemis") as GameObject;
-			(Instantiate(tmp,new Vector2(obj.x-0.5f,obj.y-0.5f),Quaternion.identity)).GetComponent<ennemis_script>().init(isBumper,niveau);
+			(Instantiate(tmp,new Vector2(obj.x+0.5f,obj.y-0.5f),Quaternion.identity)).GetComponent<ennemis_script>().init(isBumper,niveau);
 		}
 
 		/*
-		 *TODO instanciation du reste du niveau 
+		 *CheckPoint 
 		 */
 		UnityEngine.Object flag = AssetDatabase.LoadAssetAtPath("Assets/prefabs/checkpoint.prefab", typeof(GameObject));
-		GameObject myCheckpoint = Instantiate(flag, new Vector2 (niveau.checkpoint.x,niveau.hauteurBlocs[(int)niveau.checkpoint.x]), Quaternion.identity) as GameObject;
+		GameObject myCheckpoint = Instantiate(flag, new Vector2 (niveau.checkpoint.x+0.5f,niveau.hauteurBlocs[(int)niveau.checkpoint.x]-0.5f), Quaternion.identity) as GameObject;
 		myCheckpoint.name = "Checkpoint";
 
 
