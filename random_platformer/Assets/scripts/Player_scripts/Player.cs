@@ -69,7 +69,7 @@ public class Player : MonoBehaviour {
 		if (nbVie <= 0) { // Si le joueur meurt, alors on le redirige sur le main menu, mais a l'avenir faudra faire autre chose
 			SceneManager.LoadScene("menu");
 		}
-		Image_nbvie.sprite = Resources.Load<Sprite> ("Numero/hud_" + getNbVie ());
+		Image_nbvie.sprite = Resources.Load<Sprite> ("numeros/hud_" + getNbVie ());
 	}
 
 	void CheckPowerUpActif () {
@@ -181,13 +181,13 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void Reset(string nom) {
+	public void ResetEffect(string nom) {		
 		switch (nom) {
-		case "Inversement": 
-			inversement.Initialize ();
-			break;
-		case "JumpBoost": 
+		case "JumpBoost":
 			jumpboost.Initialize ();
+			break;
+		case "Inversement":
+			inversement.Initialize ();
 			break;
 		case "Invincibilite":
 			invincibilite.Initialize ();
