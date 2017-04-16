@@ -8,9 +8,6 @@ public class PowerUpEffects : MonoBehaviour {
 	private int tempsEffet = 10;
 	private string nomPowerUp;
 	private Player thePlayer;
-	/*private static IEnumerator COInversement;
-	private static IEnumerator COJumpBoost;
-	private static IEnumerator COInvincibilite;*/
 
 	private static Coroutine COInversement;
 	private static Coroutine COJumpBoost;
@@ -20,57 +17,6 @@ public class PowerUpEffects : MonoBehaviour {
 
 	void Start() {
 		thePlayer = FindObjectOfType<Player> ();
-		/*COJumpBoost = ProcessPowerUpJumpBoost ();
-		COInversement = ProcessPowerUpInversement ();
-		COInvincibilite = ProcessPowerUpInvincibilite ();*/
-	}
-
-
-	/*
-	 * Je laisse les commentaires car on ne sait jamais, mais la solution que je propose fonctionne
-	 * Unity lève juste une exeption, mais c'est innofenssif, c'est un bug unity qui est réglé en 5.6
-	 * Unity 5.6 :  Web: Fixed case of harmless 'Coroutine continue failure' error being thrown when stopping a WWW coroutine.
-	 */
-	public void OnPickUp(string nom_pw) {
-		OnBeforeDelay (nom_pw);
-		thePlayer.ResetEffect(nom_pw);
-		switch (nom_pw) {
-		case "JumpBoost":			
-			/*StopCoroutine ("COJumpBoost");
-			StartCoroutine (COJumpBoost);*/
-			if (COJumpBoost != null) { 
-				StopCoroutine (COJumpBoost);
-			}
-			COJumpBoost = StartCoroutine (ProcessPowerUpJumpBoost ());
-			break;
-		case "Inversement":			
-			/*StopCoroutine ("COInversement");
-			StartCoroutine (COInversement);*/
-			if (COInversement != null) { 
-				StopCoroutine(COInversement); 
-			}
-			COInversement = StartCoroutine(ProcessPowerUpInversement());
-			break;
-		case "Invincibilite":
-			/*StopCoroutine ("COInvincibilite");
-			StartCoroutine (COInvincibilite);*/
-			if (COInvincibilite != null) {
-				StopCoroutine (COInvincibilite);
-			}
-			COInvincibilite = StartCoroutine (ProcessPowerUpInvincibilite ());
-			break;
-		default:
-			break;
-		}
-	}
-
-	private void Disable() {
-		GetComponent<Collider2D> ().enabled = false;
-		GetComponent<SpriteRenderer> ().enabled = false;
-	}
-
-	private void Remove(string nom) {
-		Destroy (GameObject.Find (nom));
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
@@ -95,6 +41,42 @@ public class PowerUpEffects : MonoBehaviour {
 			}
 		}
 		_triggered = false;
+	}
+
+	/*
+	 * Je laisse les commentaires car on ne sait jamais, mais la solution que je propose fonctionne
+	 * Unity lève juste une exeption, mais c'est innofenssif, c'est un bug unity qui est réglé en 5.6
+	 * Unity 5.6 :  Web: Fixed case of harmless 'Coroutine continue failure' error being thrown when stopping a WWW coroutine.
+	 *
+	 * Pour ce qui concerne l'utilisation de trois coroutines distinctes, je pense que c'est le mieux car de cette manière 
+	 * aucune coroutine n'interfèrera dans celle de l'autre.
+	 */
+
+	public void OnPickUp(string nom_pw) {
+		OnBeforeDelay (nom_pw);
+		thePlayer.ResetEffect(nom_pw);
+		switch (nom_pw) {
+		case "JumpBoost":			
+			if (COJumpBoost != null) { 
+				StopCoroutine (COJumpBoost);
+			}
+			COJumpBoost = StartCoroutine (ProcessPowerUpJumpBoost ());
+			break;
+		case "Inversement":			
+			if (COInversement != null) { 
+				StopCoroutine(COInversement); 
+			}
+			COInversement = StartCoroutine(ProcessPowerUpInversement());
+			break;
+		case "Invincibilite":
+			if (COInvincibilite != null) {
+				StopCoroutine (COInvincibilite);
+			}
+			COInvincibilite = StartCoroutine (ProcessPowerUpInvincibilite ());
+			break;
+		default:
+			break;
+		}
 	}
 
 	public void OnBeforeDelay(string nomPowerUp) {		
@@ -130,25 +112,28 @@ public class PowerUpEffects : MonoBehaviour {
 		Remove (nomPowerUp);
 	}
 
-	void ProcessPowerUpWhile(string nom_pw, float temps) {
-		switch (nom_pw) {
-		case "JumpBoost":
-			//while(
-			break;
-		case "Inversement":
-			thePlayer.setPowerUpInversementActif (false);
-			break;
-		case "Invincibilite":
-			thePlayer.setPowerUpInvincibleActif (false);
-			break;
-		default:
-			break;
-		}
+	private void Disable() {
+		GetComponent<Collider2D> ().enabled = false;
+		GetComponent<SpriteRenderer> ().enabled = false;
 	}
 
-	public IEnumerator ProcessPowerUp(string nom_pw, float temps) {
-		yield return new WaitForSeconds (temps);
-		OnAfterDelay (nom_pw);
+	private void Remove(string nom) {
+		Destroy (GameObject.Find (nom));
+	}
+
+	public IEnumerator ProcessPowerUpJumpBoost() {
+		yield return new WaitForSeconds (tempsEffet);
+		OnAfterDelay ("JumpBoost");
+	}
+
+	public IEnumerator ProcessPowerUpInversement() {
+		yield return new WaitForSeconds (tempsEffet);
+		OnAfterDelay ("Inversement");
+	}
+
+	public IEnumerator ProcessPowerUpInvincibilite() {
+		yield return new WaitForSeconds (tempsEffet);
+		OnAfterDelay ("Invincibilite");
 	}
 }
 

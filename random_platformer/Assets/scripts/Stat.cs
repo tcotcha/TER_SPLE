@@ -9,10 +9,7 @@ public class Stat {
 	[SerializeField]
 	private PowerUpUI pwUI;
 
-	//[SerializeField]
 	private float maxVal = 10;
-
-	//[SerializeField]
 	private float currentVal = 10;
 
 	public float CurrentVal
@@ -36,14 +33,9 @@ public class Stat {
 	}
 
 	public void Initialize() {		
-		this.CurrentVal = currentVal;
-		this.MaxVal = maxVal;
+		this.CurrentVal = 10;
+		this.MaxVal = 10;
 	}
-
-	/*public void Reset(int current, int max) {
-		this.CurrentVal = current;
-		this.MaxVal = max;
-	}*/
 
 
 }
