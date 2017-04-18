@@ -63,6 +63,10 @@ public class GenerationNiveau : MonoBehaviour {
 		genererPlateformes ();
 
 		/*
+		 *Plateforme de fin 
+		 */
+		Instantiate(Resources.Load ("plateforme_finp") as GameObject,new Vector2 (niveau.taille - 5f, (float)niveau.hauteurBlocs [niveau.taille - 5] + 2f),Quaternion.identity);
+		/*
 		 * Ennemis
 		 */
 		foreach(var obj in niveau.ennemis){
