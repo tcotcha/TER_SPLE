@@ -16,8 +16,8 @@ public class GenerationNiveau : MonoBehaviour {
 		DateTime start = DateTime.Now;
 		chargerJson (PlayerPrefs.GetString ("Json"));
 		chargerNiveau ();
-        GameObject.Find("mur_fin").transform.position = new Vector3(niveau.taille, transform.position.y, transform.position.z);
-        Camera.main.GetComponent<Camera_follow>().setMaxX(niveau.taille - 1);
+        GameObject.Find("mur_fin").transform.position = new Vector3(niveau.taille+0.5f, transform.position.y, transform.position.z);
+        Camera.main.GetComponent<Camera_follow>().setMaxX(niveau.taille);
         TimeSpan dur = DateTime.Now - start;
 		Debug.Log ("Temps d'execution = " + dur.ToString());
 		if(niveau.saison == 0){
@@ -68,7 +68,7 @@ public class GenerationNiveau : MonoBehaviour {
 		foreach(var obj in niveau.ennemis){
 			bool isBumper = (obj.GetType() == typeof(Bumper));
 			GameObject tmp = Resources.Load("ennemis") as GameObject;
-			(Instantiate(tmp,new Vector2(obj.x+0.5f,obj.y-0.5f),Quaternion.identity)).GetComponent<ennemis_script>().init(isBumper,niveau);
+			(Instantiate(tmp,new Vector2(obj.x+0.5f,obj.y-1.5f),Quaternion.identity)).GetComponent<ennemis_script>().init(isBumper,niveau);
 		}
 
 		/*
