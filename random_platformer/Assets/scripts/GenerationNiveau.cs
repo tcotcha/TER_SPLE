@@ -10,7 +10,7 @@ using UnityEditor;
 #endif
 
 public class GenerationNiveau : MonoBehaviour {
-	private Niveau niveau;
+	private static Niveau niveau;
 
 	void Start () {
 		DateTime start = DateTime.Now;
@@ -20,6 +20,7 @@ public class GenerationNiveau : MonoBehaviour {
         Camera.main.GetComponent<Camera_follow>().setMaxX(niveau.taille);
         TimeSpan dur = DateTime.Now - start;
 		Debug.Log ("Temps d'execution = " + dur.ToString());
+		PlayerPrefs.SetInt("Y0", niveau.hauteurBlocs[0]);
 		if(niveau.saison == 0){
 			PlayerPrefs.SetString("Saison", "snow");
 		}else{
@@ -46,7 +47,6 @@ public class GenerationNiveau : MonoBehaviour {
 		 * Player
 		 */
 		GameObject.Find("Player").transform.position = new Vector2 (0.5f, (float)niveau.hauteurBlocs [0] + 1.5f);
-		GameObject.Find ("boxRestart").transform.position = new Vector2(GameObject.Find ("boxRestart").transform.position.x,niveau.hauteurBlocs [0] + 5f);
 
 		/*
 		 * powerups
@@ -72,7 +72,11 @@ public class GenerationNiveau : MonoBehaviour {
 		foreach(var obj in niveau.ennemis){
 			bool isBumper = (obj.GetType() == typeof(Bumper));
 			GameObject tmp = Resources.Load("ennemis") as GameObject;
-			(Instantiate(tmp,new Vector2(obj.x+0.5f,obj.y-1.5f),Quaternion.identity)).GetComponent<ennemis_script>().init(isBumper,niveau);
+			if (isBumper) {
+				(Instantiate (tmp, new Vector2 (obj.x + 0.5f, obj.y - 0.4f), Quaternion.identity)).GetComponent<ennemis_script> ().init (isBumper, niveau);
+			} else {
+				(Instantiate(tmp,new Vector2(obj.x+0.5f,obj.y-0.5f),Quaternion.identity)).GetComponent<ennemis_script>().init(isBumper,niveau);
+			}
 		}
 
 		/*
@@ -223,7 +227,7 @@ public class GenerationNiveau : MonoBehaviour {
 		Debug.Log (niveau.Affiche ());
 	}
 
-	private void genererPlateformes(){
+	private static void genererPlateformes(){
 		niveau.plateformes.ForEach (delegate(Plateforme p) {
 			UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath ("Assets/prefabs/platform_" + p.largeur + ".prefab", typeof(GameObject));
 			GameObject tmp = Instantiate (prefab, new Vector2 (p.positionX, p.positionY), Quaternion.identity) as GameObject;
@@ -247,6 +251,14 @@ public class GenerationNiveau : MonoBehaviour {
 				script.fin_y = p.positionY;
 			}
 		});
+	}
+
+	public static void regenererPlateformes(){
+		GameObject[] g = GameObject.FindGameObjectsWithTag ("Platform");
+		foreach (GameObject p in g){
+			Destroy(p);
+		}
+		genererPlateformes ();
 	}
 
 	private GameObject chooseTile(int h,int j,int s){

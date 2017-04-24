@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Mur
+  - Checkpoint
+  - PlayerFoot
+  - Platform
   layers:
   - Default
   - TransparentFX

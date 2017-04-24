@@ -84,7 +84,7 @@ public class ennemis_script : MonoBehaviour {
 			if (tmp - Mathf.Floor (tmp) > 0.8) {
 				invDir ();
 			}
-		} else if (tmp < niveau.taille && niveau.hauteurBlocs [Mathf.FloorToInt (tmp)] != niveau.hauteurBlocs [Mathf.FloorToInt (tmp) + direction]) {
+		} else if (tmp < niveau.taille && tmp > 1  && niveau.hauteurBlocs [Mathf.FloorToInt (tmp)] != niveau.hauteurBlocs [Mathf.FloorToInt (tmp) + direction]) {
 			if(direction == -1 && tmp - Mathf.Floor (tmp) < 0.3f){
 				invDir ();
 			}else if(direction == 1 && tmp - Mathf.Floor (tmp) > 0.8f){

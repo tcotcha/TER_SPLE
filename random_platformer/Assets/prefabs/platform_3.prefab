@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 114851777935243872}
   m_Layer: 0
   m_Name: platform_3
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1603473421412920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 7.5, z: 0}
+  m_LocalPosition: {x: 3.475, y: 11.052636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4272944420837964}
@@ -313,9 +313,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: 14931af9bbe467b4f8ad03d0848969c2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
-  m_Offset: {x: -0.046728134, y: 0.13150597}
+  m_Offset: {x: -0.0028710365, y: 0.13150597}
   serializedVersion: 2
-  m_Size: {x: 0.9065442, y: 0.12558876}
+  m_Size: {x: 0.99425983, y: 0.12558877}
 --- !u!95 &95330300871959766
 Animator:
   serializedVersion: 3

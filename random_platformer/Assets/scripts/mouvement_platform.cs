@@ -39,21 +39,16 @@ public class mouvement_platform : MonoBehaviour {
 		}
 		if(transform.name.Contains("platform_2")){
 			transform.GetChild(0).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Saison")+"Left");
-			transform.GetChild(0).GetComponent<SpriteRenderer> ().transform.localScale = new Vector3 (1.4375f, 1.425f, 1);
 			transform.GetChild(0).GetComponent<Animator>().runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load(PlayerPrefs.GetString("Saison")+"FriableLeft"));
 			transform.GetChild(1).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Saison")+"Right");
-			transform.GetChild(1).GetComponent<SpriteRenderer> ().transform.localScale = new Vector3 (1.4375f, 1.425f, 1);
 			transform.GetChild(1).GetComponent<Animator>().runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load(PlayerPrefs.GetString("Saison")+"FriableRight"));
 		}
 		if(transform.name.Contains("platform_3")){
 			transform.GetChild(0).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Saison")+"Left");
-			transform.GetChild(0).GetComponent<SpriteRenderer> ().transform.localScale = new Vector3 (1.4375f, 1.425f, 1);
 			transform.GetChild(0).GetComponent<Animator>().runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load(PlayerPrefs.GetString("Saison")+"FriableLeft"));
 			transform.GetChild(1).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Saison")+"Mid");
-			transform.GetChild(1).GetComponent<SpriteRenderer> ().transform.localScale = new Vector3 (1.4375f, 1.425f, 1);
 			transform.GetChild(1).GetComponent<Animator>().runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load(PlayerPrefs.GetString("Saison")+"FriableMid"));
 			transform.GetChild(2).GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>(PlayerPrefs.GetString("Saison")+"Right");
-			transform.GetChild(2).GetComponent<SpriteRenderer> ().transform.localScale = new Vector3 (1.4375f, 1.425f, 1);
 			transform.GetChild(2).GetComponent<Animator>().runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load(PlayerPrefs.GetString("Saison")+"FriableRight"));
 		}
 		if (friable) {

@@ -2,14 +2,24 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Player_scripts\Player.cs">
     <Files>
+<<<<<<< Updated upstream
       <File FileName="Assets\scripts\Ennemis_scripts\Front.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Player_scripts\Player.cs" Line="123" Column="1" />
       <File FileName="Assets\scripts\GenerationNiveau.cs" Line="20" Column="72" />
       <File FileName="Assets\scripts\Stat.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\trigger_sol.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Camera_follow.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\scripts\GenerationNiveau.cs" Line="50" Column="1" />
+      <File FileName="Assets\scripts\trigger_platform_friable.cs" Line="12" Column="34" />
+      <File FileName="Assets\scripts\mouvement_platform.cs" Line="47" Column="1" />
+      <File FileName="Assets\scripts\trigger_sol.cs" Line="10" Column="9" />
+>>>>>>> Stashed changes
       <File FileName="Assets\scripts\Ennemis_scripts\ennemis_script.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Ennemis_scripts\spear_script.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Player_scripts\Player.cs" Line="43" Column="1" />
+      <File FileName="Assets\scripts\trigger_flag.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\menu_interaction.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Player_scripts\GroundCheck.cs" Line="11" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

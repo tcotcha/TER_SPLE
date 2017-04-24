@@ -6,9 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
-
-	public GameObject box;
-
 	public float maxSpeed = 2f;
 	public float speed = 150f;
 	public float jmpHeight;
@@ -43,7 +40,6 @@ public class Player : MonoBehaviour {
 	void Start () {
 		rg2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-		box = GameObject.Find ("boxRestart");
 	}
 
 	void Update(){
@@ -63,6 +59,10 @@ public class Player : MonoBehaviour {
 		CheckVieEtUpdateImage ();
 		CheckDirection ();
 		CheckSaut ();
+
+		if (getGrounded ()) {
+			rg2d.gravityScale = 1;
+		}
 	}
 
 	void CheckVieEtUpdateImage() {
@@ -164,19 +164,20 @@ public class Player : MonoBehaviour {
 	}
 
 	public void die(string mort){
-		if (!powerUpInvincibleActif) {
-			box.SetActive (true);
-			transform.localPosition = new Vector3 (0, 8, 0);
-			box.SetActive (false);
-			GetComponentInChildren<GroundCheck> ().setNb (0);
+		GenerationNiveau.regenererPlateformes ();
+		rg2d.gravityScale = 1;
 
-			setNbVie (getNbVie () - 1);
-			powerUpReset = true;
-		} else if (mort.Equals("trigger_sol")) {
-			box.SetActive (true);
-			transform.localPosition = new Vector3 (0, 8, 0);
-			box.SetActive (false);
+		Vector3 restart;
+		if(GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<trigger_flag>().actif){
+			restart = new Vector3 (GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<trigger_flag>().transform.localPosition.x, GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<trigger_flag>().transform.localPosition.y, 0);
+		}else {
+			restart = new Vector3 (0, PlayerPrefs.GetInt("Y0"), 0);
+		}
+
+		if (mort.Equals("trigger_sol") || !powerUpInvincibleActif) {
+			transform.localPosition = restart;
 			GetComponentInChildren<GroundCheck> ().setNb (0);
+			setNbVie (getNbVie () - 1);
 			powerUpReset = true;
 		}
 	}

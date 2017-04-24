@@ -7,7 +7,7 @@ public class trigger_platform_friable : MonoBehaviour {
 	public GameObject platform;
 
 	IEnumerator OnTriggerStay2D(Collider2D other) {
-		if(other.gameObject.tag == "PlayerFoot" && (GameObject.Find("Player").GetComponent<Player>().getGrounded())){
+			if(other.gameObject.tag == "PlayerFoot" && (GameObject.Find("Player").GetComponent<Player>().getGrounded())){
 			Animator anim = GetComponentInParent<Animator> ();
 			anim.SetBool ("friableGrounded", true);
 			if (transform.parent.name != "platform") {
