@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 	private int nbVie = 3;
 
 	private Canvas CanvasLoose;
+	private Canvas CanvasPause;
 
 	private bool grounded;//True if the player is on the ground
 	private bool powerUpReset;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour {
 		rg2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		CanvasLoose = GameObject.Find("CanvasLoose").GetComponent<Canvas>();
+		CanvasPause = GameObject.Find("CanvasPause").GetComponent<Canvas>();
 	}
 
 	void Update(){
@@ -55,8 +57,10 @@ public class Player : MonoBehaviour {
 			transform.localScale = new Vector2 (Mathf.Sign(Input.GetAxis ("Horizontal"))*Mathf.Abs(transform.localScale.x), transform.localScale.y);
 		}
 		//Revenir au menu en appuyant sur "echap"
-		if (Input.GetKeyDown (KeyCode.Escape))
-			SceneManager.LoadScene("menu");
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			CanvasPause.enabled = true;
+			Time.timeScale = 0;
+		}			
 
 		CheckPowerUpActif ();
 		CheckVieEtUpdateImage ();

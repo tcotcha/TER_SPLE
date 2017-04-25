@@ -7,12 +7,15 @@ public class ChangeVisibilityCanvas : MonoBehaviour {
 
 	private Canvas CanvasWin;
 	private Canvas CanvasLoose;
+	private Canvas CanvasPause;
 
 	void Start() {
 		CanvasWin = GameObject.Find("CanvasWin").GetComponent<Canvas>();
 		CanvasLoose = GameObject.Find("CanvasLoose").GetComponent<Canvas>();
+		CanvasPause = GameObject.Find("CanvasPause").GetComponent<Canvas>();
 		CanvasWin.enabled = false;
 		CanvasLoose.enabled = false;
+		CanvasPause.enabled = false;
 	}
 
 	public void OnRejouer() {
@@ -22,6 +25,11 @@ public class ChangeVisibilityCanvas : MonoBehaviour {
 
 	public void OnQuitter(){
 		SceneManager.LoadScene("menu");
+		Time.timeScale = 1;
+	}
+
+	public void OnReprendre(){
+		CanvasPause.enabled = false;
 		Time.timeScale = 1;
 	}
 		
