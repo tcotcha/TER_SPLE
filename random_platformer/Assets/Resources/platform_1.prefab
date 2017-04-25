@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b8658f99e8d0b49bcf3216b43d49b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 3
-  y: 6.74
-  fin_x: 3
-  fin_y: 6
+  x: 104
+  y: 4.5
+  fin_x: 104
+  fin_y: 4.5
   friable: 1
   trigger:
   - {fileID: 1530103349736424}

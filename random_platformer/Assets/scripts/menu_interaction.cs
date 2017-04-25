@@ -80,7 +80,7 @@ public class menu_interaction : MonoBehaviour {
 		}
 		PlayerPrefs.SetString("Json", pathOut);
 		string cmd = pathScript + " " + pathIn + " " + pathOut;
-
+		print (cmd);
 		Process p = new Process ();
 		p.StartInfo.FileName = "Python/python.exe";
 		p.StartInfo.Arguments = cmd;

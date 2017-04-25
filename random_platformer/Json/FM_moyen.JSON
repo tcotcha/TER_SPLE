@@ -32,5 +32,9 @@
         "vieDown"
       ]
   },
+  "piece":{
+    "min":15,
+    "max":20
+  },
   "difficulte": "moyen"
 }

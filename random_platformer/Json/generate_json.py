@@ -89,9 +89,15 @@ class Joueur(object):
 		self.x = x
 		self.y = y
 
-#Levele Class
+#Pieces Class
+class Pieces(object):
+	def __init__(self, positionX,positionY):
+		self.positionX = positionX
+		self.positionY = positionY
+
+#Level Class
 class Niveau(object):
-	def __init__(self,dif,t,hauteurB,joueur,checkpoint,pieges,plateformes,ennemis,items):
+	def __init__(self,dif,t,hauteurB,joueur,checkpoint,pieges,plateformes,ennemis,items,pieces):
 		self.difficulte = dif
 		self.taille = t
 		self.hauteurBlocs = hauteurB
@@ -101,6 +107,7 @@ class Niveau(object):
 		self.plateformes = plateformes
 		self.ennemies = ennemis
 		self.items = items
+		self.pieces = pieces
 		self.saison = randint(0,1)
 
 def serialiseur(obj):
@@ -168,6 +175,9 @@ def serialiseur(obj):
 	if isinstance(obj,Pieges):
 		return {"longueur":obj.longueur,
 				"positionX":obj.positionX}
+	if isinstance(obj,Pieces):
+		return {"positionX":obj.positionX,
+				"positionY":obj.positionY}
 	if isinstance(obj,Niveau):
 		return {"difficulte":obj.difficulte,
 				"saison":obj.saison,
@@ -178,6 +188,7 @@ def serialiseur(obj):
 				"pieges":obj.pieges,
 				"plateformes":obj.plateformes,
 				"ennemies":obj.ennemies,
+				"pieces":obj.pieces,
 				"items":obj.items}
 
 #get parameters
@@ -207,6 +218,7 @@ nbEnnemies = randint(data["ennemi"]["min"],data["ennemi"]["max"])
 nbPlateformes = randint(data["plateforme"]["min"],data["plateforme"]["max"])
 nbPieges = randint(data["piege"]["min"],data["piege"]["max"])
 nbPowerUp = randint(data["power-up"]["min"],data["power-up"]["max"])
+nbPieces = randint(data["piece"]["min"],data["piece"]["max"])
 
 #calcul du sol
 smoothness = randint(5,13)
@@ -243,7 +255,6 @@ if nbPieges != 0:
 			sol[pieges[tmp].positionX + i] = 0
 			i += 1
 		tmp+=1
-
 
 #write checkpoint
 checkPointX = int((taille-1)/2)
@@ -322,6 +333,14 @@ for i in ennemieX:
 	else:
 		ennemis.append(Tireur(i,sol[i]))
 
+#placement des pieces
+pieces = []
+pieceX = sample(range(5, taille-1), nbPieces)
+for i in pieceX:
+	myY = randint(sol[i],sol[i]+3)
+	pieces.append(Pieces(i,myY))
+
+
 #Items creation
 items = []
 itemsX = sample(range(10,taille-1),nbPowerUp)
@@ -343,7 +362,7 @@ for i in itemsX:
 		items.append(VieMalus(i,sol[i]+1))
 
 
-level = Niveau(difficulte,taille,sol,joueur,checkpoint,pieges,plateformes,ennemis,items)
+level = Niveau(difficulte,taille,sol,joueur,checkpoint,pieges,plateformes,ennemis,items,pieces)
 
 with open(pathOut,'w+') as outfile:
 	json.dump(level,outfile,indent=4,default=serialiseur)

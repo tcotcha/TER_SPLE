@@ -1,0 +1,379 @@
+{
+    "difficulte": 3,
+    "saison": 0,
+    "taille": 150,
+    "hauteurBlocs": [
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        8,
+        8,
+        8,
+        7,
+        6,
+        5,
+        4,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        3,
+        3,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        6,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4
+    ],
+    "joueur": {
+        "nbVies": 3,
+        "hauteurSaut": 1.5,
+        "vitesse": 2,
+        "x": 0,
+        "y": 5
+    },
+    "checkpoint": {
+        "actif": false,
+        "x": 74,
+        "y": 4
+    },
+    "pieges": [
+        {
+            "longueur": 3,
+            "positionX": 15
+        },
+        {
+            "longueur": 4,
+            "positionX": 19
+        },
+        {
+            "longueur": 3,
+            "positionX": 37
+        },
+        {
+            "longueur": 5,
+            "positionX": 45
+        },
+        {
+            "longueur": 5,
+            "positionX": 64
+        },
+        {
+            "longueur": 3,
+            "positionX": 90
+        },
+        {
+            "longueur": 4,
+            "positionX": 100
+        },
+        {
+            "longueur": 3,
+            "positionX": 114
+        },
+        {
+            "longueur": 4,
+            "positionX": 123
+        },
+        {
+            "longueur": 5,
+            "positionX": 135
+        }
+    ],
+    "plateformes": [
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 20,
+            "y": 3.5,
+            "finX": 20,
+            "finY": 3.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 46,
+            "y": 4.5,
+            "friable": true
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 65,
+            "y": 4.5,
+            "finX": 65,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 101,
+            "y": 4.5,
+            "finX": 101,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 124,
+            "y": 4.5,
+            "finX": 129,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 136,
+            "y": 4.5,
+            "finX": 141,
+            "finY": 9.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 104,
+            "y": 4.5,
+            "friable": true
+        }
+    ],
+    "ennemies": [
+        {
+            "type": "Tireur",
+            "x": 117,
+            "y": 4
+        },
+        {
+            "type": "Tireur",
+            "x": 75,
+            "y": 4
+        },
+        {
+            "type": "Bumper",
+            "x": 104,
+            "y": 4,
+            "direction": -1
+        },
+        {
+            "type": "Tireur",
+            "x": 50,
+            "y": 4
+        },
+        {
+            "type": "Bumper",
+            "x": 78,
+            "y": 7,
+            "direction": -1
+        },
+        {
+            "type": "Tireur",
+            "x": 96,
+            "y": 4
+        },
+        {
+            "type": "Tireur",
+            "x": 87,
+            "y": 4
+        },
+        {
+            "type": "Tireur",
+            "x": 88,
+            "y": 4
+        },
+        {
+            "type": "Tireur",
+            "x": 142,
+            "y": 3
+        }
+    ],
+    "pieces": [
+        {
+            "positionX": 60,
+            "positionY": 3
+        },
+        {
+            "positionX": 110,
+            "positionY": 6
+        },
+        {
+            "positionX": 37,
+            "positionY": 6
+        },
+        {
+            "positionX": 65,
+            "positionY": 4
+        },
+        {
+            "positionX": 5,
+            "positionY": 3
+        },
+        {
+            "positionX": 86,
+            "positionY": 5
+        },
+        {
+            "positionX": 88,
+            "positionY": 5
+        },
+        {
+            "positionX": 77,
+            "positionY": 7
+        },
+        {
+            "positionX": 142,
+            "positionY": 4
+        },
+        {
+            "positionX": 74,
+            "positionY": 4
+        },
+        {
+            "positionX": 73,
+            "positionY": 4
+        },
+        {
+            "positionX": 147,
+            "positionY": 5
+        },
+        {
+            "positionX": 114,
+            "positionY": 6
+        },
+        {
+            "positionX": 46,
+            "positionY": 4
+        },
+        {
+            "positionX": 47,
+            "positionY": 6
+        }
+    ],
+    "items": []
+}

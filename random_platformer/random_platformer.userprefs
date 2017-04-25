@@ -1,12 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ChangeVisibilityCanvas.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GenerationNiveau.cs">
     <Files>
-      <File FileName="Assets\scripts\menu_interaction.cs" Line="24" Column="16" />
-      <File FileName="Assets\scripts\trigger_flag.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\trigger_fin_jeu.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ChangeVisibilityCanvas.cs" Line="32" Column="31" />
-      <File FileName="Assets\scripts\Player_scripts\Player.cs" Line="63" Column="4" />
+      <File FileName="Assets\scripts\Player_scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GenerationNiveau.cs" Line="55" Column="61" />
+      <File FileName="Assets\scripts\mouvement_platform.cs" Line="28" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -402,10 +402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b8658f99e8d0b49bcf3216b43d49b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 10
-  y: 7.5
-  fin_x: 10
-  fin_y: 5
+  x: 136
+  y: 4.5
+  fin_x: 141
+  fin_y: 9.5
   friable: 0
   trigger:
   - {fileID: 1330522682156670}

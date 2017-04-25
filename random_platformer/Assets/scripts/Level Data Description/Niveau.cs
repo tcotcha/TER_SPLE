@@ -16,6 +16,7 @@ public class Niveau {
 	public List<Plateforme> plateformes { get; set; }
 	public List<Ennemis> ennemis { get; set; }
 	public List<PowerUp> powerups { get; set; }
+	public List<Piece> pieces { get; set; }
 
 
 	public string Affiche() {
@@ -26,6 +27,7 @@ public class Niveau {
 		"NbPieges : " + pieges.Count + "\n" +
 		"NbPlateformes : " + plateformes.Count + "\n" +
 		"NbEnnemis : " + ennemis.Count + "\n" +
+		"NbPieces : " + pieces.Count + "\n" +
 		"NbPowerUps : " + powerups.Count + "\n";
 	}
 }

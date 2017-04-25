@@ -52,8 +52,9 @@ public class GenerationNiveau : MonoBehaviour {
 		 * powerups
 		 */
 		niveau.powerups.ForEach (delegate(PowerUp obj) {
-			UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs/powerup.prefab", typeof(GameObject));
-			GameObject tmp = Instantiate(prefab, new Vector2 (obj.getX(), obj.getY()), Quaternion.identity) as GameObject;
+			GameObject tmp = Resources.Load ("powerup") as GameObject;
+		//	UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs/powerup.prefab", typeof(GameObject));
+			Instantiate(tmp, new Vector2 (obj.getX(), obj.getY()), Quaternion.identity);
 			tmp.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>("powerup/"+obj.GetType());
 			tmp.name = obj.GetType().ToString();
 		});
@@ -82,16 +83,24 @@ public class GenerationNiveau : MonoBehaviour {
 		/*
 		 *CheckPoint 
 		 */
-		UnityEngine.Object flag = AssetDatabase.LoadAssetAtPath("Assets/prefabs/checkpoint.prefab", typeof(GameObject));
-		GameObject myCheckpoint = Instantiate(flag, new Vector2 (niveau.checkpoint.x+0.5f,niveau.hauteurBlocs[(int)niveau.checkpoint.x]-0.5f), Quaternion.identity) as GameObject;
+		//UnityEngine.Object flag = AssetDatabase.LoadAssetAtPath("Assets/prefabs/checkpoint.prefab", typeof(GameObject));
+		GameObject myCheckpoint = Resources.Load ("checkpoint") as GameObject;
+		Instantiate(myCheckpoint, new Vector2 (niveau.checkpoint.x+0.5f,niveau.hauteurBlocs[(int)niveau.checkpoint.x]-0.5f), Quaternion.identity);
 		myCheckpoint.name = "Checkpoint";
 
+
+		/*Pieces*/
+		niveau.pieces.ForEach (delegate(Piece p) {
+			//UnityEngine.Object tmp = AssetDatabase.LoadAssetAtPath("Assets/prefabs/coin.prefab", typeof(GameObject));
+			GameObject coin = Resources.Load ("coin") as GameObject;
+			Instantiate(coin, new Vector2(p.positionX, p.positionY), Quaternion.identity);
+			coin.name = "coin";
+		});
 
 	}
 
 	public void chargerJson(string _path){
 		string path = _path;
-		print (path);
 		string jsonString = File.ReadAllText (path);
 
 		/*
@@ -104,6 +113,7 @@ public class GenerationNiveau : MonoBehaviour {
 		niveau.pieges = new List<Pieges> ();
 		niveau.hauteurBlocs = new List<int> ();
 		niveau.checkpoint = new CheckPoint ();
+		niveau.pieces = new List<Piece> ();
 
 		/*
 		 * On créer un JObject afin de parser notre json
@@ -126,7 +136,6 @@ public class GenerationNiveau : MonoBehaviour {
 		foreach (var i in element_niveau["hauteurBlocs"].Children()) {
 			niveau.hauteurBlocs.Add (i.Value<int>());
 		}
-		Debug.Log ("Liste_hauteurblocs : Fait");
 
 		/*
 		 * Pièges
@@ -136,7 +145,15 @@ public class GenerationNiveau : MonoBehaviour {
 			float positionX = item_pieges ["positionX"].Value<float> ();
 			niveau.pieges.Add (new Pieges (largeur, positionX));
 		}
-		Debug.Log ("Liste_pieges : Fait");
+
+		/*
+		 * Pièces
+		*/
+		foreach (var item_pieces in element_niveau["pieces"].Children()) {
+			float positionX = item_pieces ["positionX"].Value<float> ();
+			float positionY = item_pieces ["positionY"].Value<float> ();
+			niveau.pieces.Add (new Piece (positionX,positionY));
+		}
 
 		/*
 		 * Checkpoint
@@ -144,7 +161,6 @@ public class GenerationNiveau : MonoBehaviour {
 		niveau.checkpoint.actif = element_niveau ["checkpoint"] ["actif"].Value<bool> ();
 		niveau.checkpoint.x = element_niveau ["checkpoint"] ["x"].Value<int> ();
 		niveau.checkpoint.y = element_niveau ["checkpoint"] ["y"].Value<int> ();
-		Debug.Log ("Checkpoint : Fait");
 
 		/*
 		 * Plateformes
@@ -166,7 +182,6 @@ public class GenerationNiveau : MonoBehaviour {
 				niveau.plateformes.Add (new Mobile (largeur, x, y, finX, finY));
 			}				
 		}
-		Debug.Log ("Liste_plateformes : Fait");
 
 		/*
 		 * Ennemis
@@ -183,7 +198,6 @@ public class GenerationNiveau : MonoBehaviour {
 				niveau.ennemis.Add (new Bumper (x, y));
 			}				
 		}
-		Debug.Log ("Liste_ennemis : Fait");
 
 		/*
 		 * PowerUps
@@ -223,14 +237,13 @@ public class GenerationNiveau : MonoBehaviour {
 				break;		
 			}
 		}
-		Debug.Log ("Liste_powerups : Fait");
-		Debug.Log (niveau.Affiche ());
 	}
 
 	private static void genererPlateformes(){
 		niveau.plateformes.ForEach (delegate(Plateforme p) {
-			UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath ("Assets/prefabs/platform_" + p.largeur + ".prefab", typeof(GameObject));
-			GameObject tmp = Instantiate (prefab, new Vector2 (p.positionX, p.positionY), Quaternion.identity) as GameObject;
+			//UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath ("Assets/prefabs/platform_" + p.largeur + ".prefab", typeof(GameObject));
+			GameObject tmp = Resources.Load("platform_" + p.largeur) as GameObject;
+			Instantiate (tmp, new Vector2 (p.positionX, p.positionY), Quaternion.identity);
 			mouvement_platform script = tmp.GetComponent<mouvement_platform>();
 			tmp.name = "platform_" + p.largeur;
 			script.x = p.positionX;

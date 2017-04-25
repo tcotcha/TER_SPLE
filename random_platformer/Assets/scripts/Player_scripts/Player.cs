@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 	public float speed = 150f;
 	public float jmpHeight;
 	private int nbVie = 3;
+	public int Score = 0;
 
 	private Canvas CanvasLoose;
 	private Canvas CanvasPause;
@@ -31,6 +32,13 @@ public class Player : MonoBehaviour {
 	private Stat invincibilite;
 	[SerializeField]
 	private Image Image_nbvie;
+	[SerializeField]
+	private Image Image_Cent;
+	[SerializeField]
+	private Image Image_Diz;
+	[SerializeField]
+	private Image Image_Uni;
+
 
 	private float h;
 
@@ -58,14 +66,15 @@ public class Player : MonoBehaviour {
 		}
 		//Revenir au menu en appuyant sur "echap"
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-			CanvasPause.enabled = true;
-			Time.timeScale = 0;
+			CanvasPause.enabled = !CanvasPause.enabled;
+			Time.timeScale = (Time.timeScale+1)%2;
 		}			
 
 		CheckPowerUpActif ();
 		CheckVieEtUpdateImage ();
 		CheckDirection ();
 		CheckSaut ();
+		checkScore ();
 
 		if (getGrounded ()) {
 			rg2d.gravityScale = 1;
@@ -73,11 +82,17 @@ public class Player : MonoBehaviour {
 	}
 
 	void CheckVieEtUpdateImage() {
-		if (nbVie <= 0) {
+		if (nbVie <= 0 && !CanvasLoose.enabled) {
 			Time.timeScale = 0;
 			CanvasLoose.enabled = true;
 		}
 		Image_nbvie.sprite = Resources.Load<Sprite> ("numeros/hud_" + getNbVie ());
+	}
+
+	void checkScore(){
+		Image_Cent.sprite = Resources.Load<Sprite> ("numeros/hud_" + Score/100);
+		Image_Diz.sprite = Resources.Load<Sprite> ("numeros/hud_" + (Score/10)%10);
+		Image_Uni.sprite = Resources.Load<Sprite> ("numeros/hud_" + Score%10);
 	}
 
 	void CheckPowerUpActif () {
