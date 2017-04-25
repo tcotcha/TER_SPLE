@@ -7,46 +7,58 @@ using System.Diagnostics;
 
 public class menu_interaction : MonoBehaviour {
 
-	public Button button_start;
-	public Button button_exit;
-	public Button button_easy;
-	public Button button_medium;
-	public Button button_hard;
-	public GameObject cadre;
-	private int positionNiveau;
-
 	private static int nbLevels;
+	private Button niveau_facile;
+	private Button niveau_moyen;
+	private Button niveau_difficile;
+	private int positionCurseurNiveau;
 
 	void Start(){
-		choixNiveau (1);
-		positionNiveau = 1;
+		niveau_facile = GameObject.Find ("Button_Easy").GetComponent<Button> ();
+		niveau_moyen = GameObject.Find ("Button_Medium").GetComponent<Button> ();
+		niveau_difficile = GameObject.Find ("Button_Hard").GetComponent<Button> ();
+		positionCurseurNiveau = 0;
 		nbLevels = System.IO.Directory.GetFiles ("Json/Generated/", "*.json", System.IO.SearchOption.TopDirectoryOnly).Length;
 	}
 
 	void Update(){
-		if (Input.GetKeyDown (KeyCode.Escape))
-			exitGame ();
 		if (Input.GetKeyDown (KeyCode.Return))
-			startGame ();
+			startGame (positionCurseurNiveau);
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
-			if (positionNiveau > 1){
-				positionNiveau--;
-				choixNiveau (positionNiveau);
+			if (positionCurseurNiveau > 1){
+				positionCurseurNiveau--;
+				choixNiveau (positionCurseurNiveau);
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.DownArrow)) {
-			if (positionNiveau < 3){
-				positionNiveau++;
-				choixNiveau (positionNiveau);
+			if (positionCurseurNiveau < 3){
+				positionCurseurNiveau++;
+				choixNiveau (positionCurseurNiveau);
 			}
 		}
 	}
 
-	public void startGame(){
+	public void choixNiveau(int position){
+		switch(position){
+		case 1:
+			niveau_facile.Select ();
+			break;
+		case 2:
+			niveau_moyen.Select ();
+			break;
+		case 3:
+			niveau_difficile.Select ();
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void startGame(int difficulte){
 		string pathScript = "Json/generate_json.py";
 		string pathIn = "Json/";
 		string pathOut = "Json/Generated/";
-		switch(positionNiveau){
+		switch(difficulte){
 		case 1:
 			pathIn += "FM_facile.json";
 			pathOut = pathOut + "easy_" + nbLevels + ".json";
@@ -84,23 +96,5 @@ public class menu_interaction : MonoBehaviour {
 
 	public void exitGame(){
 		Application.Quit();
-	}
-
-	public void choixNiveau(int position){
-		Vector3 positionCadre = cadre.transform.localPosition;
-		switch(position){
-		case 1:
-			positionCadre.y = 42.5f;
-			break;
-		case 2:
-			positionCadre.y = -42.5f;
-			break;
-		case 3:
-			positionCadre.y = -122.4f;
-			break;
-		default:
-			break;
-		}
-		cadre.transform.localPosition = positionCadre;
 	}
 }

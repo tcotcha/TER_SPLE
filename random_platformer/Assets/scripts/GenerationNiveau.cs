@@ -65,7 +65,7 @@ public class GenerationNiveau : MonoBehaviour {
 		/*
 		 *Plateforme de fin 
 		 */
-		Instantiate(Resources.Load ("plateforme_finp") as GameObject,new Vector2 (niveau.taille - 5f, (float)niveau.hauteurBlocs [niveau.taille - 5] + 2f),Quaternion.identity);
+		Instantiate(Resources.Load ("plateforme_fin_niveau") as GameObject,new Vector2 (niveau.taille - 5f, (float)niveau.hauteurBlocs [niveau.taille - 5] + 2f),Quaternion.identity);
 		/*
 		 * Ennemis
 		 */

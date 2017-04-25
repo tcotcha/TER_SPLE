@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 	public float jmpHeight;
 	private int nbVie = 3;
 
+	private Canvas CanvasLoose;
+
 	private bool grounded;//True if the player is on the ground
 	private bool powerUpReset;
 	private bool powerUpInvincibleActif = false;
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour {
 	void Start () {
 		rg2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		CanvasLoose = GameObject.Find("CanvasLoose").GetComponent<Canvas>();
 	}
 
 	void Update(){
@@ -66,8 +69,9 @@ public class Player : MonoBehaviour {
 	}
 
 	void CheckVieEtUpdateImage() {
-		if (nbVie <= 0) { // Si le joueur meurt, alors on le redirige sur le main menu, mais a l'avenir faudra faire autre chose
-			SceneManager.LoadScene("menu");
+		if (nbVie <= 0) {
+			Time.timeScale = 0;
+			CanvasLoose.enabled = true;
 		}
 		Image_nbvie.sprite = Resources.Load<Sprite> ("numeros/hud_" + getNbVie ());
 	}
