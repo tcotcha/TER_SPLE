@@ -1,0 +1,438 @@
+{
+    "difficulte": 1,
+    "saison": 1,
+    "taille": 147,
+    "hauteurBlocs": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        8,
+        8,
+        8,
+        7,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        6,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2
+    ],
+    "joueur": {
+        "nbVies": 3,
+        "hauteurSaut": 1.5,
+        "vitesse": 2,
+        "x": 0,
+        "y": 3
+    },
+    "checkpoint": {
+        "actif": false,
+        "x": 73,
+        "y": 5
+    },
+    "pieges": [
+        {
+            "longueur": 5,
+            "positionX": 35
+        },
+        {
+            "longueur": 5,
+            "positionX": 90
+        },
+        {
+            "longueur": 5,
+            "positionX": 114
+        }
+    ],
+    "plateformes": [
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 36,
+            "y": 4.5,
+            "finX": 41,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 91,
+            "y": 4.5,
+            "finX": 96,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 115,
+            "y": 4.5,
+            "finX": 120,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 52,
+            "y": 2.5,
+            "finX": 52,
+            "finY": 2.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 13,
+            "y": 2.5,
+            "finX": 13,
+            "finY": 2.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 135,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 98,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 142,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 119,
+            "y": 4.5,
+            "finX": 119,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 80,
+            "y": 7.5,
+            "finX": 80,
+            "finY": 7.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 107,
+            "y": 4.5,
+            "finX": 107,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 106,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 99,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 139,
+            "y": 4.5,
+            "finX": 144,
+            "finY": 9.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 112,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 108,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 44,
+            "y": 4.5,
+            "finX": 49,
+            "finY": 4.5
+        }
+    ],
+    "ennemies": [
+        {
+            "type": "Bumper",
+            "x": 142,
+            "y": 4,
+            "direction": -1
+        }
+    ],
+    "pieces": [
+        {
+            "positionX": 57,
+            "positionY": 4
+        },
+        {
+            "positionX": 47,
+            "positionY": 5
+        },
+        {
+            "positionX": 103,
+            "positionY": 6
+        },
+        {
+            "positionX": 7,
+            "positionY": 5
+        },
+        {
+            "positionX": 17,
+            "positionY": 4
+        },
+        {
+            "positionX": 64,
+            "positionY": 4
+        },
+        {
+            "positionX": 16,
+            "positionY": 3
+        },
+        {
+            "positionX": 52,
+            "positionY": 2
+        },
+        {
+            "positionX": 116,
+            "positionY": 6
+        },
+        {
+            "positionX": 70,
+            "positionY": 2
+        },
+        {
+            "positionX": 10,
+            "positionY": 4
+        },
+        {
+            "positionX": 120,
+            "positionY": 6
+        },
+        {
+            "positionX": 125,
+            "positionY": 5
+        },
+        {
+            "positionX": 43,
+            "positionY": 5
+        },
+        {
+            "positionX": 138,
+            "positionY": 5
+        },
+        {
+            "positionX": 22,
+            "positionY": 8
+        },
+        {
+            "positionX": 96,
+            "positionY": 4
+        },
+        {
+            "positionX": 35,
+            "positionY": 4
+        },
+        {
+            "positionX": 49,
+            "positionY": 6
+        },
+        {
+            "positionX": 134,
+            "positionY": 6
+        }
+    ],
+    "items": [
+        {
+            "type": "JumpBoost",
+            "temporaire": true,
+            "x": 113,
+            "y": 5,
+            "duree": 10
+        },
+        {
+            "type": "JumpBoost",
+            "temporaire": true,
+            "x": 52,
+            "y": 3,
+            "duree": 10
+        },
+        {
+            "type": "Inversement",
+            "temporaire": true,
+            "x": 86,
+            "y": 5,
+            "duree": 10
+        },
+        {
+            "type": "JumpBoost",
+            "temporaire": true,
+            "x": 81,
+            "y": 7,
+            "duree": 10
+        },
+        {
+            "type": "Inversement",
+            "temporaire": true,
+            "x": 29,
+            "y": 7,
+            "duree": 10
+        }
+    ]
+}

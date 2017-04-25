@@ -337,9 +337,16 @@ for i in ennemieX:
 pieces = []
 pieceX = sample(range(5, taille-1), nbPieces)
 for i in pieceX:
-	myY = randint(sol[i],sol[i]+3)
-	pieces.append(Pieces(i,myY))
 
+	myY = 0
+	if sol[i] == 0:
+		j = i
+		while sol[j] == 0:
+			j-=1
+		myY = randint(sol[j],sol[j]+2)
+	else:
+		myY = randint(sol[i],sol[i]+2)
+	pieces.append(Pieces(i,myY))
 
 #Items creation
 items = []

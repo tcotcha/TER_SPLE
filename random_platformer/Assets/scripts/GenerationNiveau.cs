@@ -52,9 +52,7 @@ public class GenerationNiveau : MonoBehaviour {
 		 * powerups
 		 */
 		niveau.powerups.ForEach (delegate(PowerUp obj) {
-			GameObject tmp = Resources.Load ("powerup") as GameObject;
-		//	UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/prefabs/powerup.prefab", typeof(GameObject));
-			Instantiate(tmp, new Vector2 (obj.getX(), obj.getY()), Quaternion.identity);
+			GameObject tmp = Instantiate(Resources.Load ("powerup") as GameObject, new Vector2 (obj.getX(), obj.getY()), Quaternion.identity);
 			tmp.GetComponent<SpriteRenderer> ().sprite = Resources.Load<Sprite>("powerup/"+obj.GetType());
 			tmp.name = obj.GetType().ToString();
 		});
@@ -83,17 +81,13 @@ public class GenerationNiveau : MonoBehaviour {
 		/*
 		 *CheckPoint 
 		 */
-		//UnityEngine.Object flag = AssetDatabase.LoadAssetAtPath("Assets/prefabs/checkpoint.prefab", typeof(GameObject));
-		GameObject myCheckpoint = Resources.Load ("checkpoint") as GameObject;
-		Instantiate(myCheckpoint, new Vector2 (niveau.checkpoint.x+0.5f,niveau.hauteurBlocs[(int)niveau.checkpoint.x]-0.5f), Quaternion.identity);
+		GameObject myCheckpoint = Instantiate(Resources.Load ("checkpoint") as GameObject, new Vector2 (niveau.checkpoint.x+0.5f,niveau.hauteurBlocs[(int)niveau.checkpoint.x]-0.5f), Quaternion.identity);
 		myCheckpoint.name = "Checkpoint";
 
 
 		/*Pieces*/
 		niveau.pieces.ForEach (delegate(Piece p) {
-			//UnityEngine.Object tmp = AssetDatabase.LoadAssetAtPath("Assets/prefabs/coin.prefab", typeof(GameObject));
-			GameObject coin = Resources.Load ("coin") as GameObject;
-			Instantiate(coin, new Vector2(p.positionX, p.positionY), Quaternion.identity);
+			GameObject coin = Instantiate(Resources.Load ("coin") as GameObject, new Vector2(p.positionX, p.positionY), Quaternion.identity);
 			coin.name = "coin";
 		});
 
@@ -241,9 +235,7 @@ public class GenerationNiveau : MonoBehaviour {
 
 	private static void genererPlateformes(){
 		niveau.plateformes.ForEach (delegate(Plateforme p) {
-			//UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath ("Assets/prefabs/platform_" + p.largeur + ".prefab", typeof(GameObject));
-			GameObject tmp = Resources.Load("platform_" + p.largeur) as GameObject;
-			Instantiate (tmp, new Vector2 (p.positionX, p.positionY), Quaternion.identity);
+			GameObject tmp = Instantiate (Resources.Load("platform_" + p.largeur) as GameObject, new Vector2 (p.positionX, p.positionY), Quaternion.identity);
 			mouvement_platform script = tmp.GetComponent<mouvement_platform>();
 			tmp.name = "platform_" + p.largeur;
 			script.x = p.positionX;
