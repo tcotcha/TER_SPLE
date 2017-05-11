@@ -16,16 +16,15 @@ public class ChangeVisibilityCanvas : MonoBehaviour {
 		CanvasWin.enabled = false;
 		CanvasLoose.enabled = false;
 		CanvasPause.enabled = false;
+		Time.timeScale = 1;
 	}
 
 	public void OnRejouer() {
 		SceneManager.LoadScene("main_scene");
-		Time.timeScale = 1;
 	}
 
 	public void OnQuitter(){
 		SceneManager.LoadScene("menu");
-		Time.timeScale = 1;
 	}
 
 	public void OnReprendre(){

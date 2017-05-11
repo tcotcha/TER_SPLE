@@ -1,0 +1,372 @@
+{
+    "difficulte": 1,
+    "saison": 0,
+    "taille": 138,
+    "hauteurBlocs": [
+        6,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1,
+        1,
+        2,
+        4,
+        4,
+        6,
+        7,
+        8,
+        8,
+        8,
+        7,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        3,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        3,
+        2,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        7,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        6,
+        6
+    ],
+    "joueur": {
+        "nbVies": 3,
+        "hauteurSaut": 1.5,
+        "vitesse": 2,
+        "x": 0,
+        "y": 7
+    },
+    "checkpoint": {
+        "actif": false,
+        "x": 68,
+        "y": 4
+    },
+    "pieges": [
+        {
+            "longueur": 3,
+            "positionX": 18
+        },
+        {
+            "longueur": 3,
+            "positionX": 100
+        }
+    ],
+    "plateformes": [
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 106,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 94,
+            "y": 4.5,
+            "finX": 94,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 48,
+            "y": 4.5,
+            "finX": 48,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 65,
+            "y": 2.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 39,
+            "y": 4.5,
+            "finX": 39,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 116,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 105,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 11,
+            "y": 2.5,
+            "finX": 16,
+            "finY": 2.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 63,
+            "y": 4.5,
+            "finX": 68,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 37,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 26,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 75,
+            "y": 6.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 93,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 70,
+            "y": 5.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 135,
+            "y": 5.5,
+            "friable": false
+        }
+    ],
+    "ennemies": [],
+    "pieces": [
+        {
+            "positionX": 136,
+            "positionY": 7
+        },
+        {
+            "positionX": 5,
+            "positionY": 4
+        },
+        {
+            "positionX": 89,
+            "positionY": 6
+        },
+        {
+            "positionX": 130,
+            "positionY": 4
+        },
+        {
+            "positionX": 41,
+            "positionY": 6
+        },
+        {
+            "positionX": 88,
+            "positionY": 4
+        },
+        {
+            "positionX": 25,
+            "positionY": 2
+        },
+        {
+            "positionX": 62,
+            "positionY": 6
+        },
+        {
+            "positionX": 84,
+            "positionY": 4
+        },
+        {
+            "positionX": 31,
+            "positionY": 10
+        },
+        {
+            "positionX": 27,
+            "positionY": 4
+        },
+        {
+            "positionX": 24,
+            "positionY": 2
+        },
+        {
+            "positionX": 54,
+            "positionY": 1
+        },
+        {
+            "positionX": 30,
+            "positionY": 10
+        },
+        {
+            "positionX": 111,
+            "positionY": 4
+        },
+        {
+            "positionX": 85,
+            "positionY": 5
+        },
+        {
+            "positionX": 26,
+            "positionY": 4
+        }
+    ],
+    "items": [
+        {
+            "type": "Inversement",
+            "temporaire": true,
+            "x": 45,
+            "y": 5,
+            "duree": 10
+        },
+        {
+            "type": "VieBonus",
+            "temporaire": false,
+            "x": 93,
+            "y": 5
+        },
+        {
+            "type": "Inversement",
+            "temporaire": true,
+            "x": 87,
+            "y": 5,
+            "duree": 10
+        }
+    ]
+}

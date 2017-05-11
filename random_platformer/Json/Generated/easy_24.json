@@ -1,0 +1,425 @@
+{
+    "difficulte": 1,
+    "saison": 0,
+    "taille": 149,
+    "hauteurBlocs": [
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        8,
+        8,
+        7,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7,
+        7,
+        7,
+        7,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4
+    ],
+    "joueur": {
+        "nbVies": 3,
+        "hauteurSaut": 1.5,
+        "vitesse": 2,
+        "x": 0,
+        "y": 5
+    },
+    "checkpoint": {
+        "actif": false,
+        "x": 74,
+        "y": 5
+    },
+    "pieges": [],
+    "plateformes": [
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 134,
+            "y": 4.5,
+            "finX": 139,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 67,
+            "y": 4.5,
+            "finX": 72,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 130,
+            "y": 4.5,
+            "finX": 135,
+            "finY": 4.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 128,
+            "y": 4.5,
+            "finX": 133,
+            "finY": 4.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 79,
+            "y": 7.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 3,
+            "x": 146,
+            "y": 3.5,
+            "finX": 146,
+            "finY": 3.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 95,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 104,
+            "y": 4.5,
+            "finX": 104,
+            "finY": 9.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 77,
+            "y": 6.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 123,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 88,
+            "y": 4.5,
+            "finX": 93,
+            "finY": 9.5
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 38,
+            "y": 4.5,
+            "finX": 38,
+            "finY": 9.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 64,
+            "y": 5.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 2,
+            "x": 60,
+            "y": 3.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 3,
+            "x": 15,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 127,
+            "y": 4.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 2,
+            "x": 94,
+            "y": 4.5,
+            "finX": 99,
+            "finY": 9.5
+        },
+        {
+            "type": "Immobile",
+            "largeur": 1,
+            "x": 78,
+            "y": 7.5,
+            "friable": false
+        },
+        {
+            "type": "Mobile",
+            "largeur": 1,
+            "x": 126,
+            "y": 4.5,
+            "finX": 131,
+            "finY": 4.5
+        }
+    ],
+    "ennemies": [],
+    "pieces": [
+        {
+            "positionX": 47,
+            "positionY": 5
+        },
+        {
+            "positionX": 32,
+            "positionY": 7
+        },
+        {
+            "positionX": 13,
+            "positionY": 5
+        },
+        {
+            "positionX": 134,
+            "positionY": 6
+        },
+        {
+            "positionX": 67,
+            "positionY": 4
+        },
+        {
+            "positionX": 111,
+            "positionY": 4
+        },
+        {
+            "positionX": 117,
+            "positionY": 4
+        },
+        {
+            "positionX": 138,
+            "positionY": 5
+        },
+        {
+            "positionX": 74,
+            "positionY": 4
+        },
+        {
+            "positionX": 94,
+            "positionY": 6
+        },
+        {
+            "positionX": 63,
+            "positionY": 4
+        },
+        {
+            "positionX": 43,
+            "positionY": 6
+        },
+        {
+            "positionX": 12,
+            "positionY": 4
+        },
+        {
+            "positionX": 22,
+            "positionY": 2
+        },
+        {
+            "positionX": 28,
+            "positionY": 7
+        },
+        {
+            "positionX": 147,
+            "positionY": 4
+        },
+        {
+            "positionX": 9,
+            "positionY": 3
+        },
+        {
+            "positionX": 140,
+            "positionY": 3
+        },
+        {
+            "positionX": 83,
+            "positionY": 5
+        },
+        {
+            "positionX": 135,
+            "positionY": 5
+        }
+    ],
+    "items": [
+        {
+            "type": "VieBonus",
+            "temporaire": false,
+            "x": 93,
+            "y": 5
+        },
+        {
+            "type": "Invincibilite",
+            "temporaire": true,
+            "x": 43,
+            "y": 5,
+            "duree": 10
+        },
+        {
+            "type": "Invincibilite",
+            "temporaire": true,
+            "x": 73,
+            "y": 4,
+            "duree": 10
+        },
+        {
+            "type": "VieBonus",
+            "temporaire": false,
+            "x": 113,
+            "y": 5
+        }
+    ]
+}
