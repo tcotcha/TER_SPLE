@@ -102,7 +102,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/Tib0/Desktop/Tib0/Github/TER_SPLE/random_platformer/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+ <HintPath>D:/Florian/Bureau/TER/TER_SPLE/random_platformer/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
